@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,16 +8,18 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
   </head>
 
-  <body class="bg-white text-gray-800 font-sans antialiased">
+  <body class="bg-light-background text-light-primary dark:bg-dark-background dark:text-dark-primary font-sans antialiased transition-colors duration-300">
+
     <!-- Navbar -->
     {% include "common/_navbar.html" %}
 
     <!-- Main content -->
-    <main class="min-h-screen">
+    <main class="min-h-screen pt-24">
       {% block content %}{% endblock %}
     </main>
 
     <!-- Footer -->
     {% include "common/_footer.html" %}
+
   </body>
 </html>
