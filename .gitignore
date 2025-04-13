@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+*.pot
+.Python
+*.sqlite3
+
+# Virtual Environments
+env/
+.venv/
+venv/
+
+# Environment Variables
+*.env
+*.env.*
+env.toml
+
+# Django
+db.sqlite3
+/staticfiles/
+media/
+
+# Migrations (optional: exclude generated migration files but keep init)
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# Editors
+.vscode/
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Docker
+docker/
+*.pid
+
+# Node / Tailwind
+node_modules/
+build/
+dist/
+package-lock.json
+tailwind.config.js
+postcss.config.js
+
+# uv
+.uv/

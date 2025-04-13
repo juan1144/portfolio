@@ -1,0 +1,18 @@
+services:
+  db-portfolio:
+    container_name: postgres-portfolio
+    image: postgres:15.6
+    restart: on-failure
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: portfolio
+    volumes:
+      - ./docker/postgres/data:/var/lib/postgresql/data
+      - ./docker/sql:/docker-entrypoint-initdb.d
+    ports:
+      - "127.0.0.1:5434:5432"
+    command:
+      - "postgres"
+      - "-c"
+      - "timezone=America/El_Salvador"

@@ -1,4 +1,4 @@
-# Datax
+# Portfolio jfpenate
 
 ## Python environment manager
 https://github.com/astral-sh/uv
@@ -6,7 +6,7 @@ https://github.com/astral-sh/uv
 
 ## Dependencies
 
-For psycopg local installation  
+For psycopg local installation
 https://www.psycopg.org/psycopg3/docs/basic/install.html#local-installation
 ```shell
 
