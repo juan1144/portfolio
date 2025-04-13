@@ -44,8 +44,8 @@ node_modules/
 build/
 dist/
 package-lock.json
-tailwind.config.js
 postcss.config.js
+tailwindcss
 
 # uv
 .uv/
