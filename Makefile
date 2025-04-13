@@ -77,3 +77,9 @@ dockerstop:  ## Stop Docker services
 # ------------------:  ## pre-commit ----------------------------------------------------
 pcupdate:  ## Update pre-commit hooks
 	pre-commit autoupdate
+
+# ------------------:  ## tailwind ------------------------------------------------------
+css:  ## Compile Tailwind CSS to base.css
+	./tailwindcss -i static/css/input.css -o static/css/base.css
+watch:  ## Start Tailwind watcher
+	./tailwindcss -i static/css/input.css -o static/css/base.css --watch
