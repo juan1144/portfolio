@@ -1,3 +1,7 @@
+// *********************************************************************
+// THEME
+// *********************************************************************
+
 function setTheme(mode) {
   const html = document.documentElement;
   if (mode === 'dark') {
@@ -36,4 +40,19 @@ window.addEventListener('DOMContentLoaded', () => {
   if (toggleBtn) {
     toggleBtn.addEventListener('click', toggleTheme);
   }
+});
+
+
+// *******************************************************
+// SHOW/HIDE DROPDOWN/BUTTON Phone size
+// *******************************************************
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("mobile-menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
 });
