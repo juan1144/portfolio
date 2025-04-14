@@ -3,44 +3,37 @@
 <nav class="fixed top-6 left-0 w-full z-50 flex justify-center pointer-events-none">
   <div class="max-w-7xl w-full flex items-center justify-between px-6">
 
-    <!-- Avatar -->
+    <!-- Picture -->
     <div class="pointer-events-auto">
       <a href="{% url 'core:home' %}">
         <img src="{% static 'images/profile.JPG' %}" alt="Logo" class="w-10 h-10 rounded-full border border-dark-border dark:border-light-border shadow" />
       </a>
     </div>
 
-    <!-- Menú flotante -->
+    <!-- Float Menu -->
     <ul class="pointer-events-auto hidden md:flex items-center space-x-4 px-6 py-2
                bg-light-background/90 dark:bg-dark-background/90
                text-sm font-medium text-light-primary dark:text-dark-primary
                shadow-lg ring-1 ring-light-border/10 dark:ring-dark-border/10
                backdrop-blur-md rounded-full transition-colors duration-300">
       <li><a href="#" class="hover:text-light-accent dark:hover:text-dark-accent transition">About</a></li>
-      <li><a href="#" class="hover:text-light-accent dark:hover:text-dark-accent transition">Articles</a></li>
       <li><a href="#" class="hover:text-light-accent dark:hover:text-dark-accent transition">Projects</a></li>
-      <li><a href="#" class="hover:text-light-accent dark:hover:text-dark-accent transition">Speaking</a></li>
-      <li><a href="#" class="hover:text-light-accent dark:hover:text-dark-accent transition">Uses</a></li>
+      <li><a href="#" class="hover:text-light-accent dark:hover:text-dark-accent transition">Articles</a></li>
     </ul>
 
-    <!-- Botón modo oscuro -->
+    <!-- dark mode button -->
     <div class="pointer-events-auto">
-      <button type="button" class="group p-2
+      <button type="button" data-theme-toggle class="group p-2
                                    bg-light-background/90 dark:bg-dark-background/90
                                    rounded-full shadow ring-1 ring-light-border/10 dark:ring-dark-border/10
                                    hover:ring-light-accent dark:hover:ring-dark-accent transition">
-
-        <!-- Sol (modo oscuro activo) -->
         <svg xmlns="http://www.w3.org/2000/svg" class="hidden dark:block h-5 w-5 text-dark-primary group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1.5M4.22 4.22l1.06 1.06M3 12h1.5M4.22 19.78l1.06-1.06M12 20.5V22M19.78 19.78l-1.06-1.06M20.5 12H22M19.78 4.22l-1.06 1.06M12 7a5 5 0 100 10 5 5 0 000-10z"/>
         </svg>
-
-        <!-- Luna (modo claro activo) -->
         <svg xmlns="http://www.w3.org/2000/svg" class="block dark:hidden h-5 w-5 text-light-primary group-hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
         </svg>
       </button>
     </div>
-
   </div>
 </nav>
