@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+  {% load static %}
+
+  <section class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+  <!-- Texto principal -->
+    <div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-light-primary dark:text-dark-primary">
+        Hola, soy Juan Peñate
+      </h1>
+      <p class="text-lg text-light-secondary dark:text-dark-secondary mb-4">
+        Estudiante de Ingeniería en Sistemas apasionado por el desarrollo de aplicaciones modernas, limpias y eficientes.
+        Con especial interés en el backend con Django y la integración de interfaces minimalistas con Tailwind CSS.
+      </p>
+      <p class="text-base text-light-secondary dark:text-dark-secondary mb-6">
+        Me encanta construir proyectos que resuelvan problemas reales y aplicar buenas prácticas desde el diseño hasta el despliegue.
+      </p>
+
+    <!-- Botones -->
+      <div class="flex flex-wrap gap-3 mb-8">
+        <a href="{% url 'core:projects' %}" class="px-5 py-2 rounded-full text-sm font-medium text-white bg-light-accent dark:bg-dark-accent hover:opacity-90 transition">Ver proyectos</a>
+        <a href="#contact" class="px-5 py-2 rounded-full text-sm font-medium border border-light-border dark:border-dark-border text-light-primary dark:text-dark-primary hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition">Contactar</a>
+        <a href="#" class="px-5 py-2 rounded-full text-sm font-medium border border-light-border dark:border-dark-border text-light-primary dark:text-dark-primary hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition">Descargar CV</a>
+        <a href="https://github.com/juan1144" class="px-5 py-2 rounded-full text-sm font-medium text-light-accent dark:text-dark-accent hover:underline" target="_blank">GitHub</a>
+        <a href="https://sv.linkedin.com/in/jfph25" class="px-5 py-2 rounded-full text-sm font-medium text-light-accent dark:text-dark-accent hover:underline" target="_blank">LinkedIn</a>
+      </div>
+
+    <!-- Skills -->
+      <div class="flex flex-wrap gap-2 text-sm font-medium">
+        <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full">Python</span>
+        <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full">Django</span>
+        <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full">Tailwind CSS</span>
+        <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full">PostgreSQL</span>
+        <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full">Docker</span>
+        <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full">Git</span>
+      </div>
+    </div>
+
+  <!-- Foto personal -->
+    <div class="flex justify-center md:justify-end">
+      <img src="{% static 'images/#' %}" alt="Foto de Javier Peñate"
+           class="w-60 h-60 rounded-full border-4 border-light-border dark:border-dark-border shadow-lg object-cover" />
+    </div>
+  </section>
+
+{% endblock %}

@@ -19,21 +19,21 @@
       <li>
         <a href="{% url 'core:home' %}"
            class="{% if view_name == 'core:home' %} text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
-          Home
+          Inicio
         </a>
       </li>
 
       <li>
         <a href="{% url 'core:projects' %}"
            class="{% if view_name == 'core:projects' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
-          Projects
+          Proyectos
         </a>
       </li>
 
       <li>
         <a href="{% url 'core:articles' %}"
            class="{% if view_name == 'core:articles' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
-          Articles
+          Articulos
         </a>
       </li>
 
@@ -43,14 +43,14 @@
     <div class="pointer-events-auto relative md:hidden">
 
       <button id="mobile-menu-toggle"
-            class="flex items-center space-x-2 px-4 py-2 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay
-                   rounded-full shadow ring-1 ring-light-border/10 dark:ring-dark-border/10
-                   text-light-primary dark:text-dark-primary hover:ring-light-accent dark:hover:ring-dark-accent transition">
-      <span>Menu</span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down hidden dark:block h-5 w-5 text-dark-primary group-hover:text-white">
-        <path d="m6 9 6 6 6-6"/>
-      </svg>
-    </button>
+              class="flex items-center space-x-2 px-4 py-2 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay
+                     rounded-full shadow ring-1 ring-light-border/10 dark:ring-dark-border/10
+                     text-light-primary dark:text-dark-primary hover:ring-light-accent dark:hover:ring-dark-accent transition">
+        <span>Menu</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down hidden dark:block h-5 w-5 text-dark-primary group-hover:text-white">
+          <path d="m6 9 6 6 6-6"/>
+        </svg>
+      </button>
 
 
       <div id="mobile-menu"
@@ -61,19 +61,19 @@
           <li>
             <a href="{% url 'core:home' %}"
                class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'core:home' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
-              Home
+              Inicio
             </a>
           </li>
           <li>
             <a href="{% url 'core:projects' %}"
                class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'core:projects' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
-              Projects
+              Proyectos
             </a>
           </li>
           <li>
             <a href="{% url 'core:articles' %}"
                class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'core:articles' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
-              Articles
+              Articulos
             </a>
           </li>
         </ul>
@@ -84,9 +84,9 @@
     <!-- dark mode button -->
     <div class="pointer-events-auto">
       <button type="button" data-theme-toggle class="group p-2
-                                   bg-light-background/90 dark:bg-dark-background/90
-                                   rounded-full shadow ring-1 ring-light-border/10 dark:ring-dark-border/10
-                                   hover:ring-light-accent dark:hover:ring-dark-accent transition">
+                                                     bg-light-background/90 dark:bg-dark-background/90
+                                                     rounded-full shadow ring-1 ring-light-border/10 dark:ring-dark-border/10
+                                                     hover:ring-light-accent dark:hover:ring-dark-accent transition">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun hidden dark:block h-5 w-5 text-dark-primary group-hover:text-white">
           <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/>
           <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
