@@ -5,20 +5,38 @@
 
     <!-- Picture -->
     <div class="pointer-events-auto">
-      <a href="{% url 'core:home' %}">
-        <img src="{% static 'images/profile.JPG' %}" alt="Logo" class="w-10 h-10 rounded-full border border-dark-border dark:border-light-border shadow" />
-      </a>
+{#      <a href="{% url 'core:home' %}">#}
+{#        <img src="{% static 'images/profile.JPG' %}" alt="Logo" class="w-10 h-10 rounded-full border border-dark-border dark:border-light-border shadow" />#}
+{#      </a>#}
     </div>
 
     <!-- Float Menu -->
     <ul class="pointer-events-auto hidden md:flex items-center space-x-4 px-6 py-2
-               bg-light-background/90 dark:bg-dark-background/90
+               bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay
                text-sm font-medium text-light-primary dark:text-dark-primary
                shadow-lg ring-1 ring-light-border/10 dark:ring-dark-border/10
                backdrop-blur-md rounded-full transition-colors duration-300">
-      <li><a href="#" class="hover:text-light-accent dark:hover:text-dark-accent transition">About</a></li>
-      <li><a href="#" class="hover:text-light-accent dark:hover:text-dark-accent transition">Projects</a></li>
-      <li><a href="#" class="hover:text-light-accent dark:hover:text-dark-accent transition">Articles</a></li>
+      <li>
+        <a href="{% url 'core:home' %}"
+           class="{% if view_name == 'core:home' %} text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a href="{% url 'core:projects' %}"
+           class="{% if view_name == 'core:projects' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
+          Projects
+        </a>
+      </li>
+
+      <li>
+        <a href="{% url 'core:articles' %}"
+           class="{% if view_name == 'core:articles' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
+          Articles
+        </a>
+      </li>
+
     </ul>
 
     <!-- dark mode button -->
