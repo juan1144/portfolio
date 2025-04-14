@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}Jfpenate{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}" />
   </head>
 
   <body class="bg-light-background text-light-primary dark:bg-dark-background dark:text-dark-primary font-sans antialiased transition-colors duration-300">
@@ -21,5 +22,13 @@
     <!-- Footer -->
     {% include "common/_footer.html" %}
     <script src="{% static 'js/base.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: 600,
+        easing: 'ease-out',
+      });
+    </script>
   </body>
 </html>

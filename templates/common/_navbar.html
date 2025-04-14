@@ -31,9 +31,9 @@
       </li>
 
       <li>
-        <a href="{% url 'core:articles' %}"
-           class="{% if view_name == 'core:articles' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
-          Articulos
+        <a href="{% url 'core:blog' %}"
+           class="{% if view_name == 'core:blog' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
+          blog
         </a>
       </li>
 
@@ -71,9 +71,9 @@
             </a>
           </li>
           <li>
-            <a href="{% url 'core:articles' %}"
-               class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'core:articles' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
-              Articulos
+            <a href="{% url 'core:blog' %}"
+               class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'core:blog' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
+              blog
             </a>
           </li>
         </ul>

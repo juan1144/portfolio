@@ -9,5 +9,5 @@ def projects(request):
     return render(request, "base.html")
 
 
-def articles(request):
+def blog(request):
     return render(request, "base.html")
