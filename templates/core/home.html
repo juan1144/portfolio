@@ -3,52 +3,130 @@
 {% block content %}
   {% load static %}
 <!-- Hero principal -->
-  <section
-    class="max-w-7xl mx-auto px-6 py-10c grid grid-cols-1 md:grid-cols-2 items-center gap-12">
-    <div data-aos="fade-right">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-light-primary dark:text-dark-primary">
-        Ingeniero en Sistemas
+  <section class="max-w-5xl mx-auto px-6 pt-10 pb-24 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+    <!-- Columna izquierda: Texto -->
+    <div class="text-center md:text-left flex flex-col items-center md:items-start" data-aos="fade-right">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 text-light-primary dark:text-dark-primary">
+        Hola, Soy Juan
       </h1>
-      <p class="text-lg text-light-secondary dark:text-dark-secondary mb-4">
-        Soy Juan, Un ingeniero en sistemas apasionado al desarrollo, automatización y eficiencia de aplicaciones web.
+      <p class="text-xl text-light-secondary dark:text-dark-secondary mb-4">
+        Ingeniero en sistemas con 1+ de experiencia
       </p>
-      <p class="text-base text-light-secondary dark:text-dark-secondary mb-6">
-        Me encanta construir proyectos útiles aplicando buenas prácticas desde el backend con Django hasta interfaces visuales con Tailwind CSS.
+      <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6">
+        Desarrollador Full Stack con enfoque en soluciones robustas tanto en frontend como backend. Si tienes alguna pregunta o proyecto en mente, no dudes en contactarme.
       </p>
 
-    <!-- main buttons -->
-      <div class="flex flex-wrap gap-3 mb-6">
+      <div class="flex flex-wrap gap-3 mb-6 justify-center md:justify-start">
         <a href="{% url 'core:projects' %}" class="px-5 py-2 rounded-full text-sm font-medium text-white bg-light-accent dark:bg-dark-accent hover:opacity-90 transition">Ver proyectos</a>
         <a href="#contact" class="px-5 py-2 rounded-full text-sm font-medium border border-light-border dark:border-dark-border text-light-primary dark:text-dark-primary hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition">Contactar</a>
       </div>
 
-    <!-- Social Networks -->
-      <div class="flex space-x-4">
+      <div class="flex space-x-4 justify-center md:justify-start">
+        <!-- GitHub -->
         <a href="https://github.com/juan1144" target="_blank" aria-label="GitHub">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github-icon lucide-github w-6 h-6 text-light-primary dark:text-dark-primary hover:text-light-accent dark:hover:text-dark-accent transition">
-            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-            <path d="M9 18c-4.51 2-5-2-7-2"/>
-          </svg>
+          <svg ... class="w-6 h-6 text-light-primary dark:text-dark-primary hover:text-light-accent dark:hover:text-dark-accent transition">...</svg>
         </a>
+        <!-- LinkedIn -->
         <a href="https://linkedin.com/in/jfph25" target="_blank" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin-icon lucide-linkedin w-6 h-6 text-light-primary dark:text-dark-primary hover:text-light-accent dark:hover:text-dark-accent transition">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-            <rect width="4" height="12" x="2" y="9"/>
-            <circle cx="4" cy="4" r="2"/>
-          </svg>
+          <svg ... class="w-6 h-6 text-light-primary dark:text-dark-primary hover:text-light-accent dark:hover:text-dark-accent transition">...</svg>
         </a>
       </div>
     </div>
 
-  <!-- Personal image -->
-    <div class="flex justify-center md:justify-end" data-aos="fade-left">
-      <img src="{% static 'images/#' %}" alt="Foto de Juan Peñate"
+    <!-- Columna derecha: Imagen -->
+    <div class="flex justify-center md:justify-center" data-aos="fade-left">
+      <img src="{% static 'images/profile.JPG' %}" alt="Foto de Juan Peñate"
            class="w-60 h-60 rounded-full border-4 border-light-border dark:border-dark-border shadow-lg object-cover" />
     </div>
   </section>
 
-<!-- Work Section -->
-  <section class="max-w-3xl mx-auto px-6 pb-24 pt-6" data-aos="fade-down">
+
+  <!-- Sección de habilidades -->
+  <section class="max-w-5xl mx-auto px-6 pb-24" data-aos="fade-up">
+    <h2 class="text-lg font-semibold text-light-primary dark:text-dark-primary flex items-center gap-2 mb-6">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal-icon lucide-terminal w-5 h-5 text-light-accent dark:text-dark-accent">
+        <polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/>
+      </svg>
+      Habilidades
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Frontend -->
+      <div>
+        <h3 class="text-sm font-semibold mb-2 flex items-center gap-2 text-light-accent dark:text-dark-accent">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+          Frontend
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {% for tech in techs_frontend %}
+            <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full text-sm">{{ tech }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Lenguajes y Backend -->
+      <div>
+        <h3 class="text-sm font-semibold mb-2 flex items-center gap-2 text-light-accent dark:text-dark-accent">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M16 3H8a2 2 0 0 0-2 2v16l6-3 6 3V5a2 2 0 0 0-2-2z"/>
+          </svg>
+          Lenguajes y Backend
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {% for lang in techs_backend %}
+            <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full text-sm">{{ lang }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Frameworks -->
+      <div>
+        <h3 class="text-sm font-semibold mb-2 flex items-center gap-2 text-light-accent dark:text-dark-accent">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+          Frameworks
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full text-sm">Django</span>
+        </div>
+      </div>
+
+      <!-- Bases de datos -->
+      <div>
+        <h3 class="text-sm font-semibold mb-2 flex items-center gap-2 text-light-accent dark:text-dark-accent">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>
+          </svg>
+          Bases de Datos
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {% for db in techs_db %}
+            <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full text-sm">{{ db }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Automatización -->
+      <div class="md:col-span-2">
+        <h3 class="text-sm font-semibold mb-2 flex items-center gap-2 text-light-accent dark:text-dark-accent">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 4h16v6H4zM4 14h16v6H4z"/>
+          </svg>
+          Orquestación / Automatización
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full text-sm">Apache Airflow</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Section -->
+  <section class="max-w-5xl mx-auto px-6 pb-24 pt-6" data-aos="fade-down">
     <div class="bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl p-6 shadow-md">
       <h2 class="text-lg font-semibold text-light-primary dark:text-dark-primary flex items-center gap-2 mb-6">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase-business-icon lucide-briefcase-business w-5 h-5 text-light-accent dark:text-dark-accent">
@@ -84,46 +162,6 @@
           <span class="text-light-secondary dark:text-dark-secondary text-sm">2023 — 2024</span>
         </li>
       </ul>
-    </div>
-  </section>
-
-  <!-- Sección de habilidades -->
-  <section class="max-w-3xl mx-auto px-6 pb-24" data-aos="fade-up">
-    <h2 class="text-xl font-semibold mb-6 text-light-primary dark:text-dark-primary">Habilidades Técnicas</h2>
-
-    <div class="space-y-6">
-      <!-- Skill: Python -->
-      <div>
-        <div class="flex justify-between mb-1">
-          <span class="text-sm font-medium text-light-primary dark:text-dark-primary">Python</span>
-          <span class="text-sm text-light-secondary dark:text-dark-secondary">90%</span>
-        </div>
-        <div class="w-full h-3 bg-light-border dark:bg-dark-border rounded-full overflow-hidden">
-          <div class="h-full bg-light-accent dark:bg-dark-accent rounded-full transition-all duration-1000 delay-300 w-0 aos-init aos-animate" data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor-placement="top-bottom" style="width: 90%;"></div>
-        </div>
-      </div>
-
-      <!-- Skill: Django -->
-      <div>
-        <div class="flex justify-between mb-1">
-          <span class="text-sm font-medium text-light-primary dark:text-dark-primary">Django</span>
-          <span class="text-sm text-light-secondary dark:text-dark-secondary">85%</span>
-        </div>
-        <div class="w-full h-3 bg-light-border dark:bg-dark-border rounded-full overflow-hidden">
-          <div class="h-full bg-light-accent dark:bg-dark-accent rounded-full transition-all duration-1000 delay-300 w-0 aos-init aos-animate" data-aos="zoom-in-right" data-aos-delay="300" style="width: 85%;"></div>
-        </div>
-      </div>
-
-      <!-- Skill: Tailwind CSS -->
-      <div>
-        <div class="flex justify-between mb-1">
-          <span class="text-sm font-medium text-light-primary dark:text-dark-primary">Tailwind CSS</span>
-          <span class="text-sm text-light-secondary dark:text-dark-secondary">80%</span>
-        </div>
-        <div class="w-full h-3 bg-light-border dark:bg-dark-border rounded-full overflow-hidden">
-          <div class="h-full bg-light-accent dark:bg-dark-accent rounded-full transition-all duration-1000 delay-300 w-0 aos-init aos-animate" data-aos="zoom-in-right" data-aos-delay="300" style="width: 80%;"></div>
-        </div>
-      </div>
     </div>
   </section>
 {% endblock %}
