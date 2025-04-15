@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Portafolio - Juan Felipe Peñate{% endblock %}
+{% block title %}Juan Peñate · Desarrollador Fullstack{% endblock %}
 {% block content %}
   {% load static %}
 <!-- Hero principal -->
@@ -35,7 +35,7 @@
 
     <!-- Columna derecha: Imagen -->
     <div class="flex justify-center md:justify-center" data-aos="fade-left">
-      <img src="{% static 'images/profile.JPG' %}" alt="Foto de Juan Peñate"
+      <img src="{% static 'images/logo.png' %}" alt="Logo de Juan Peñate"
            class="w-60 h-60 rounded-full border-4 border-light-border dark:border-dark-border shadow-lg object-cover" />
     </div>
   </section>
@@ -47,7 +47,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal-icon lucide-terminal w-5 h-5 text-light-accent dark:text-dark-accent">
         <polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/>
       </svg>
-      Habilidades
+      Conocimientos
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -129,12 +129,18 @@
   <section class="max-w-5xl mx-auto px-6 pb-24 pt-6" data-aos="fade-down">
     <div class="bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl p-6 shadow-md">
       <h2 class="text-lg font-semibold text-light-primary dark:text-dark-primary flex items-center gap-2 mb-6">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase-business-icon lucide-briefcase-business w-5 h-5 text-light-accent dark:text-dark-accent">
-          <path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
-          <path d="M22 13a18.15 18.15 0 0 1-20 0"/>
-          <rect width="20" height="14" x="2" y="6" rx="2"/>
+{#        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase-business-icon lucide-briefcase-business w-5 h-5 text-light-accent dark:text-dark-accent">#}
+{#          <path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>#}
+{#          <path d="M22 13a18.15 18.15 0 0 1-20 0"/>#}
+{#          <rect width="20" height="14" x="2" y="6" rx="2"/>#}
+{#        </svg>#}
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-json-icon lucide-file-json w-5 h-5 text-light-accent dark:text-dark-accent">
+          <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
+          <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+          <path d="M10 12a1 1 0 0 0-1 1v1a1 1 0 0 1-1 1 1 1 0 0 1 1 1v1a1 1 0 0 0 1 1"/>
+          <path d="M14 18a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1 1 1 0 0 1-1-1v-1a1 1 0 0 0-1-1"/>
         </svg>
-        Trabajo
+        Trayectoria
       </h2>
 
       <ul class="space-y-5">

@@ -5,6 +5,11 @@
 
     <!-- Social icons (navbar left) -->
     <div class="pointer-events-auto flex items-center space-x-3">
+      <a href="{% url 'core:home' %}" aria-label="Inicio">
+        <img src="{% static 'images/logo_no_bg.png' %}"
+             alt="Logo personal"
+             class="w-9 h-9 object-contain hover:opacity-80 transition" />
+      </a>
       <!-- GitHub -->
       <a href="https://github.com/juan1144" target="_blank" aria-label="GitHub">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-light-primary dark:text-dark-primary hover:text-light-accent dark:hover:text-dark-accent transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

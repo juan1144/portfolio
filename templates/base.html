@@ -7,6 +7,7 @@
     <title>{% block title %}Jfpenate{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     <link rel="stylesheet" href="{% static 'css/aos.css' %}" />
+    <link rel="icon" type="image/x-icon" href="{% static 'logo.ico' %}">
   </head>
 
   <body class="bg-light-background text-light-primary dark:bg-dark-background dark:text-dark-primary font-sans antialiased transition-colors duration-300">
@@ -15,7 +16,7 @@
     {% include "common/_navbar.html" %}
 
     <!-- Main content -->
-    <main class="min-h-screen pt-24">
+    <main class="min-h-screen pt-24 dark:bg-[url('/static/icons/texture.svg')] dark:bg-repeat dark:bg-[length:10px]">
       {% block content %}{% endblock %}
     </main>
 
