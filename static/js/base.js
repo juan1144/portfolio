@@ -56,3 +56,16 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.classList.toggle("hidden");
   });
 });
+
+// *******************************************************
+// SHOW/HIDE Navbar
+// *******************************************************
+
+document.addEventListener("scroll", () => {
+  const navbar = document.getElementById("navbar");
+  const maxScroll = 100; // a qué altura se desvanece completamente
+  const scrollTop = window.scrollY;
+
+  let opacity = 1 - Math.min(scrollTop / maxScroll, 1);
+  navbar.style.opacity = opacity;
+});
