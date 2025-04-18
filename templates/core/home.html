@@ -4,44 +4,92 @@
   {% load static %}
 <!-- Hero principal -->
   <section class="max-w-5xl mx-auto px-6 pt-10 pb-24 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
-    <!-- Columna izquierda: Texto -->
-    <div class="text-center md:text-left flex flex-col items-center md:items-start" data-aos="fade-right">
+    <!-- left column - TEXT -->
+    <div class="text-center md:text-left flex flex-col items-center md:items-start" data-aos="zoom-in">
       <h1 class="text-4xl md:text-6xl font-bold mb-6 text-light-primary dark:text-dark-primary">
         Hola, Soy Juan
       </h1>
-      <p class="text-xl text-light-secondary dark:text-dark-secondary mb-4">
-        Ingeniero en sistemas con 1+ de experiencia
-      </p>
-      <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6">
-        Desarrollador Full Stack con enfoque en soluciones robustas tanto en frontend como backend. Si tienes alguna pregunta o proyecto en mente, no dudes en contactarme.
-      </p>
-
-      <div class="flex flex-wrap gap-3 mb-6 justify-center md:justify-start">
-        <a href="{% url 'core:projects' %}" class="px-5 py-2 rounded-full text-sm font-medium text-white bg-light-accent dark:bg-dark-accent hover:opacity-90 transition">Ver proyectos</a>
-        <a href="#contact" class="px-5 py-2 rounded-full text-sm font-medium border border-light-border dark:border-dark-border text-light-primary dark:text-dark-primary hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition">Contactar</a>
+      <div class="flex items-center gap-4 mb-6" data-aos="fade-up">
+        <img src="{% static 'images/gif/welcome_sticker.gif' %}"
+             alt="Saludo animado"
+             class="w-10 h-10 md:w-12 md:h-12 object-contain align-middle" />
+        <p class="text-xl text-light-secondary dark:text-dark-secondary mb-0 leading-none">
+          Bienvenido a mi sitio web.
+        </p>
       </div>
-
+      <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6" data-aos="fade-down-left">
+        👨‍💼 Soy ingeniero en sistemas con +{{ experience_time }} año de experiencia.
+      </p>
+      <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6" data-aos="fade-down-right">
+        ✍️ He trabajado en proyectos enfocados en el flujo de datos, automatización y desarrollo web.
+      </p>
+      <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6" data-aos="fade-down-left">
+        🇳🇮 Vivo en El Salvador, CA.
+      </p>
+      <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6" data-aos="fade-down-right">
+        ☕ Me encanta el café, sobre todo si es hecho en casa.
+      </p>
+      <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6" data-aos="fade-down-left">
+        🎧 Me encanta escuchar Metal y Hip Hop y muchos otros tipos de música.
+      </p>
+      <div class="flex flex-wrap gap-3 mb-6 justify-center md:justify-start relative">
+        <a href="{% url 'core:projects' %}"
+           class="px-5 py-2 rounded-full text-sm font-medium text-white bg-light-accent dark:bg-dark-accent hover:opacity-90 transition">
+          Ver proyectos
+        </a>
+        <!-- dropdown with button -->
+        <div class="relative">
+          <button id="contactDropdownBtn"
+                  class="px-5 py-2 rounded-full text-sm font-medium border border-light-border dark:border-dark-border text-light-primary dark:text-dark-primary hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition inline-flex items-center"
+                  type="button">
+            Contactar
+            <svg class="w-2.5 h-2.5 ml-2" fill="none" viewBox="0 0 6 10" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1l4 4-4 4" />
+            </svg>
+          </button>
+          <div id="contactDropdown"
+               class="absolute
+                      md:left-full md:top-1/2 md:-translate-y-1/2 md:ml-2
+                      left-0 top-full mt-2
+                      w-48 rounded-md shadow-lg bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay
+                      ring-1 ring-light-border/10 dark:ring-dark-border/10
+                      opacity-0 scale-95 pointer-events-none
+                      transition-all duration-200
+                      md:origin-left origin-top z-50">
+            <div class="py-1 text-sm text-light-primary dark:text-dark-primary">
+              <a href="mailto:jfph25@gmail.com" target="_blank"
+                 class="block px-4 py-2 hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition">
+                ✉️ Correo
+              </a>
+              <a href="https://wa.me/50361981852" target="_blank"
+                 class="block px-4 py-2 hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition">
+                📱 WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="flex space-x-4 justify-center md:justify-start">
         <!-- GitHub -->
         <a href="https://github.com/juan1144" target="_blank" aria-label="GitHub">
-          <svg ... class="w-6 h-6 text-light-primary dark:text-dark-primary hover:text-light-accent dark:hover:text-dark-accent transition">...</svg>
+          <svg class="w-6 h-6 text-light-primary dark:text-dark-primary hover:text-light-accent dark:hover:text-dark-accent transition">...</svg>
         </a>
         <!-- LinkedIn -->
         <a href="https://linkedin.com/in/jfph25" target="_blank" aria-label="LinkedIn">
-          <svg ... class="w-6 h-6 text-light-primary dark:text-dark-primary hover:text-light-accent dark:hover:text-dark-accent transition">...</svg>
+          <svg class="w-6 h-6 text-light-primary dark:text-dark-primary hover:text-light-accent dark:hover:text-dark-accent transition">...</svg>
         </a>
       </div>
     </div>
 
-    <!-- Columna derecha: Imagen -->
+    <!-- Right column - TEXT -->
     <div class="flex justify-center md:justify-center" data-aos="fade-left">
-      <img src="{% static 'images/logo.png' %}" alt="Logo de Juan Peñate"
+      <img src="{% static 'images/profile_bk_wh.png' %}" alt="Logo de Juan Peñate"
            class="w-60 h-60 rounded-full border-4 border-light-border dark:border-dark-border shadow-lg object-cover" />
     </div>
   </section>
 
 
-  <!-- Sección de habilidades -->
+  <!-- knowledge section -->
   <section class="max-w-5xl mx-auto px-6 pb-24" data-aos="fade-up">
     <h2 class="text-lg font-semibold text-light-primary dark:text-dark-primary flex items-center gap-2 mb-6">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal-icon lucide-terminal w-5 h-5 text-light-accent dark:text-dark-accent">
@@ -66,7 +114,7 @@
         </div>
       </div>
 
-      <!-- Lenguajes y Backend -->
+      <!-- Backend -->
       <div>
         <h3 class="text-sm font-semibold mb-2 flex items-center gap-2 text-light-accent dark:text-dark-accent">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -95,7 +143,7 @@
         </div>
       </div>
 
-      <!-- Bases de datos -->
+      <!-- databases -->
       <div>
         <h3 class="text-sm font-semibold mb-2 flex items-center gap-2 text-light-accent dark:text-dark-accent">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -110,7 +158,7 @@
         </div>
       </div>
 
-      <!-- Automatización -->
+      <!-- data -->
       <div class="md:col-span-2">
         <h3 class="text-sm font-semibold mb-2 flex items-center gap-2 text-light-accent dark:text-dark-accent">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">

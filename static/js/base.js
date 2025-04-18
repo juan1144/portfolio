@@ -69,3 +69,27 @@ document.addEventListener("scroll", () => {
   let opacity = 1 - Math.min(scrollTop / maxScroll, 1);
   navbar.style.opacity = opacity;
 });
+
+// *******************************************************
+// dropdown + button
+// *******************************************************
+
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("contactDropdownBtn");
+  const dropdown = document.getElementById("contactDropdown");
+
+  if (btn && dropdown) {
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      dropdown.classList.toggle("opacity-0");
+      dropdown.classList.toggle("scale-95");
+      dropdown.classList.toggle("pointer-events-none");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add("opacity-0", "scale-95", "pointer-events-none");
+      }
+    });
+  }
+});
