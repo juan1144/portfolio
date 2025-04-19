@@ -43,22 +43,17 @@
           <div id="contactDropdown"
                class="absolute md:left-full md:top-1/2 md:-translate-y-1/2 md:ml-2 left-0 top-full mt-2 w-48 rounded-md shadow-lg bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay ring-1 ring-light-border/10 dark:ring-dark-border/10 opacity-0 scale-95 pointer-events-none transition-all duration-200 md:origin-left origin-top z-50">
             <div class="py-1 text-sm text-light-primary dark:text-dark-primary">
-              {% for social in socials %}
-                <a href="{{ social.url }}" target="_blank"
-                   class="block px-4 py-2 hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition">
-                  {{ social.name }}
-                </a>
+              {% for social in global_socials %}
+                {% if social.show_in_navbar == False %}
+                  <a href="{{ social.url }}" target="_blank"
+                     class="block px-4 py-2 hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition">
+                    {{ social.icon|safe }} {{ social.name }}
+                  </a>
+                {% endif %}
               {% endfor %}
             </div>
           </div>
         </div>
-      </div>
-      <div class="flex space-x-4 justify-center md:justify-start">
-        {% for social in socials %}
-          <a href="{{ social.url }}" target="_blank" aria-label="{{ social.name }}">
-            {{ social.icon|safe }}
-          </a>
-        {% endfor %}
       </div>
     </div>
 

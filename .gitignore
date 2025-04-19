@@ -23,10 +23,6 @@ db.sqlite3
 /staticfiles/
 media/
 
-# Migrations (optional: exclude generated migration files but keep init)
-**/migrations/*.py
-!**/migrations/__init__.py
-
 # Editors
 .vscode/
 .idea/

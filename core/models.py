@@ -31,8 +31,9 @@ class Social(models.Model):
         Profile, on_delete=models.CASCADE, related_name="socials"
     )
     name = models.CharField(max_length=50)
-    url = models.URLField()
+    url = models.CharField(max_length=200)
     icon = models.TextField()
+    show_in_navbar = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
