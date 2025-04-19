@@ -2,36 +2,29 @@
 {% block title %}Juan Peñate · Desarrollador Fullstack{% endblock %}
 {% block content %}
   {% load static %}
-<!-- Hero principal -->
+  <!-- Hero principal -->
   <section class="max-w-5xl mx-auto px-6 pt-10 pb-24 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
     <!-- left column - TEXT -->
     <div class="text-center md:text-left flex flex-col items-center md:items-start" data-aos="zoom-in">
       <h1 class="text-4xl md:text-6xl font-bold mb-6 text-light-primary dark:text-dark-primary">
-        Hola, Soy Juan
+        {{ profile.greeting }}
       </h1>
       <div class="flex items-center gap-4 mb-6" data-aos="fade-up">
         <img src="{% static 'images/gif/welcome_sticker.gif' %}"
              alt="Saludo animado"
              class="w-10 h-10 md:w-12 md:h-12 object-contain align-middle" />
         <p class="text-xl text-light-secondary dark:text-dark-secondary mb-0 leading-none">
-          Bienvenido a mi sitio web.
+          {{ profile.welcome_text }}
         </p>
       </div>
       <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6" data-aos="fade-down-left">
-        👨‍💼 Soy ingeniero en sistemas con +{{ experience_years }} año de experiencia.
+        👨‍💼 Soy {{ profile.role }} con +{{ experience_time }} año(s) de experiencia.
       </p>
-      <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6" data-aos="fade-down-right">
-        ✍️ He trabajado en proyectos enfocados en el flujo de datos, automatización y desarrollo web.
-      </p>
-      <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6" data-aos="fade-down-left">
-        🇳🇮 Vivo en El Salvador, CA.
-      </p>
-      <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6" data-aos="fade-down-right">
-        ☕ Me encanta el café, sobre todo si es hecho en casa.
-      </p>
-      <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6" data-aos="fade-down-left">
-        🎧 Me encanta escuchar Metal y Hip Hop y muchos otros tipos de música.
-      </p>
+      {% for bio in biographies %}
+        <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6" data-aos="fade-down-left">
+          {{ bio.text }}
+        </p>
+      {% endfor %}
       <div class="flex flex-wrap gap-3 mb-6 justify-center md:justify-start relative">
         <a href="{% url 'core:projects' %}"
            class="px-5 py-2 rounded-full text-sm font-medium text-white bg-light-accent dark:bg-dark-accent hover:opacity-90 transition">
@@ -48,128 +41,56 @@
             </svg>
           </button>
           <div id="contactDropdown"
-               class="absolute
-                      md:left-full md:top-1/2 md:-translate-y-1/2 md:ml-2
-                      left-0 top-full mt-2
-                      w-48 rounded-md shadow-lg bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay
-                      ring-1 ring-light-border/10 dark:ring-dark-border/10
-                      opacity-0 scale-95 pointer-events-none
-                      transition-all duration-200
-                      md:origin-left origin-top z-50">
+               class="absolute md:left-full md:top-1/2 md:-translate-y-1/2 md:ml-2 left-0 top-full mt-2 w-48 rounded-md shadow-lg bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay ring-1 ring-light-border/10 dark:ring-dark-border/10 opacity-0 scale-95 pointer-events-none transition-all duration-200 md:origin-left origin-top z-50">
             <div class="py-1 text-sm text-light-primary dark:text-dark-primary">
-              <a href="mailto:jfph25@gmail.com" target="_blank"
-                 class="block px-4 py-2 hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition">
-                ✉️ Correo
-              </a>
-              <a href="https://wa.me/50361981852" target="_blank"
-                 class="block px-4 py-2 hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition">
-                📱 WhatsApp
-              </a>
+              {% for social in socials %}
+                <a href="{{ social.url }}" target="_blank"
+                   class="block px-4 py-2 hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition">
+                  {{ social.name }}
+                </a>
+              {% endfor %}
             </div>
           </div>
         </div>
       </div>
       <div class="flex space-x-4 justify-center md:justify-start">
-        <!-- GitHub -->
-        <a href="https://github.com/juan1144" target="_blank" aria-label="GitHub">
-          <svg class="w-6 h-6 text-light-primary dark:text-dark-primary hover:text-light-accent dark:hover:text-dark-accent transition">...</svg>
-        </a>
-        <!-- LinkedIn -->
-        <a href="https://linkedin.com/in/jfph25" target="_blank" aria-label="LinkedIn">
-          <svg class="w-6 h-6 text-light-primary dark:text-dark-primary hover:text-light-accent dark:hover:text-dark-accent transition">...</svg>
-        </a>
+        {% for social in socials %}
+          <a href="{{ social.url }}" target="_blank" aria-label="{{ social.name }}">
+            {{ social.icon|safe }}
+          </a>
+        {% endfor %}
       </div>
     </div>
 
-    <!-- Right column - TEXT -->
+    <!-- Right column - profile image -->
     <div class="flex justify-center md:justify-center" data-aos="fade-left">
-      <img src="{% static 'images/profile_bk_wh.png' %}" alt="Logo de Juan Peñate"
-           class="w-60 h-60 rounded-full border-4 border-light-border dark:border-dark-border shadow-lg object-cover" />
+      {% if profile.profile_pic %}
+        <img src="{{ profile.profile_pic.url }}" alt="Foto de {{ profile.name }}"
+             class="w-60 h-60 rounded-full border-4 border-light-border dark:border-dark-border shadow-lg object-cover" />
+      {% endif %}
     </div>
   </section>
-
 
   <!-- knowledge section -->
   <section class="max-w-5xl mx-auto px-6 pb-24" data-aos="fade-up">
     <h2 class="text-lg font-semibold text-light-primary dark:text-dark-primary flex items-center gap-2 mb-6">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal-icon lucide-terminal w-5 h-5 text-light-accent dark:text-dark-accent">
-        <polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/>
-      </svg>
+      ...
       Conocimientos
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Frontend -->
-      <div>
-        <h3 class="text-sm font-semibold mb-2 flex items-center gap-2 text-light-accent dark:text-dark-accent">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M3 12h18M3 6h18M3 18h18"/>
-          </svg>
-          Frontend
-        </h3>
-        <div class="flex flex-wrap gap-2">
-          {% for tech in techs_frontend %}
-            <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full text-sm">{{ tech }}</span>
-          {% endfor %}
+      {% for category, items in skills_by_category.items %}
+        <div>
+          <h3 class="text-sm font-semibold mb-2 flex items-center gap-2 text-light-accent dark:text-dark-accent">
+            {{ category }}
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {% for skill in items %}
+              <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full text-sm">{{ skill }}</span>
+            {% endfor %}
+          </div>
         </div>
-      </div>
-
-      <!-- Backend -->
-      <div>
-        <h3 class="text-sm font-semibold mb-2 flex items-center gap-2 text-light-accent dark:text-dark-accent">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M16 3H8a2 2 0 0 0-2 2v16l6-3 6 3V5a2 2 0 0 0-2-2z"/>
-          </svg>
-          Lenguajes y Backend
-        </h3>
-        <div class="flex flex-wrap gap-2">
-          {% for lang in techs_backend %}
-            <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full text-sm">{{ lang }}</span>
-          {% endfor %}
-        </div>
-      </div>
-
-      <!-- Frameworks -->
-      <div>
-        <h3 class="text-sm font-semibold mb-2 flex items-center gap-2 text-light-accent dark:text-dark-accent">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/>
-            <path d="M2 12l10 5 10-5"/>
-          </svg>
-          Frameworks
-        </h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full text-sm">Django</span>
-        </div>
-      </div>
-
-      <!-- databases -->
-      <div>
-        <h3 class="text-sm font-semibold mb-2 flex items-center gap-2 text-light-accent dark:text-dark-accent">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>
-          </svg>
-          Bases de Datos
-        </h3>
-        <div class="flex flex-wrap gap-2">
-          {% for db in techs_db %}
-            <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full text-sm">{{ db }}</span>
-          {% endfor %}
-        </div>
-      </div>
-
-      <!-- data -->
-      <div class="md:col-span-2">
-        <h3 class="text-sm font-semibold mb-2 flex items-center gap-2 text-light-accent dark:text-dark-accent">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M4 4h16v6H4zM4 14h16v6H4z"/>
-          </svg>
-          Orquestación / Automatización
-        </h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-full text-sm">Apache Airflow</span>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </section>
 
@@ -177,39 +98,26 @@
   <section class="max-w-5xl mx-auto px-6 pb-24 pt-6" data-aos="fade-down">
     <div class="bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl p-6 shadow-md">
       <h2 class="text-lg font-semibold text-light-primary dark:text-dark-primary flex items-center gap-2 mb-6">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-json-icon lucide-file-json w-5 h-5 text-light-accent dark:text-dark-accent">
-          <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
-          <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
-          <path d="M10 12a1 1 0 0 0-1 1v1a1 1 0 0 1-1 1 1 1 0 0 1 1 1v1a1 1 0 0 0 1 1"/>
-          <path d="M14 18a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1 1 1 0 0 1-1-1v-1a1 1 0 0 0-1-1"/>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase w-5 h-5 text-light-accent dark:text-dark-accent">
+          <rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 3h-4a2 2 0 0 0-2 2v2h8V5a2 2 0 0 0-2-2z" />
         </svg>
         Trayectoria
       </h2>
-
       <ul class="space-y-5">
-        <li class="flex justify-between items-center">
-          <div class="flex items-center gap-4">
-            <img src="{% static 'images/deposito-telas.png' %}" alt="Foto de Juan Peñate"
-                 class="w-5 h-5 text-light-accent dark:text-dark-accent" />
-            <div>
-              <p class="text-light-primary dark:text-dark-primary font-medium">Deposito de telas</p>
-              <p class="text-light-secondary dark:text-dark-secondary text-sm">Ingeniero de datos</p>
+        {% for job in works %}
+          <li class="flex justify-between items-center">
+            <div class="flex items-center gap-4">
+              {% if job.logo %}
+                <img src="{{ job.logo.url }}" alt="Logo de {{ job.company }}" class="w-5 h-5 object-contain" />
+              {% endif %}
+              <div>
+                <p class="text-light-primary dark:text-dark-primary font-medium">{{ job.company }}</p>
+                <p class="text-light-secondary dark:text-dark-secondary text-sm">{{ job.position }}</p>
+              </div>
             </div>
-          </div>
-          <span class="text-light-secondary dark:text-dark-secondary text-sm">2024 — Actualidad</span>
-        </li>
-
-        <li class="flex justify-between items-center">
-          <div class="flex items-center gap-4">
-            <img src="{% static 'images/owgs.png' %}" alt="Foto de Juan Peñate"
-                 class="w-5 h-5 text-light-accent dark:text-dark-accent" />
-            <div>
-              <p class="text-light-primary dark:text-dark-primary font-medium">One World Global Services LLC</p>
-              <p class="text-light-secondary dark:text-dark-secondary text-sm">Workforce Analyst</p>
-            </div>
-          </div>
-          <span class="text-light-secondary dark:text-dark-secondary text-sm">2023 — 2024</span>
-        </li>
+            <span class="text-light-secondary dark:text-dark-secondary text-sm">{{ job.start }} — {{ job.end }}</span>
+          </li>
+        {% endfor %}
       </ul>
     </div>
   </section>
