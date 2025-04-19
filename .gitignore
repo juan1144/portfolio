@@ -49,3 +49,6 @@ tailwindcss
 
 # uv
 .uv/
+
+# Media
+/media/
