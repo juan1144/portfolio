@@ -1,7 +1,18 @@
+from datetime import date
+
 from django.shortcuts import render
 
 
 def home(request):
+    init_date = date(2023, 5, 25)
+    today = date.today()
+
+    experience_years = (
+        today.year
+        - init_date.year
+        - ((today.month, today.day) < (init_date.month, init_date.day))
+    )
+
     return render(
         request,
         "core/home.html",
@@ -17,6 +28,7 @@ def home(request):
             ],
             "techs_backend": ["Python", "C#"],
             "techs_db": ["PostgreSQL", "SQL", "MySQL"],
+            "experience_years": experience_years,
         },
     )
 
