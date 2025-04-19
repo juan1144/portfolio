@@ -24,7 +24,7 @@ from django.urls import path, include, URLPattern
 from config import settings
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("fpenatecave/", admin.site.urls),
     path("", include("core.urls", namespace="core")),
 ]
 

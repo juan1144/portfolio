@@ -1,6 +1,14 @@
 from django.contrib import admin
 from .models import Profile, Biography, Social, Skill, Work
 
+# General info
+
+admin.site.site_header = "Panel Administrativo"
+admin.site.site_title = "Admin Juan Peñate"
+admin.site.index_title = "Bienvenido al panel"
+
+# Core content
+
 
 class BiographyInline(admin.TabularInline):
     model = Biography
