@@ -6,9 +6,12 @@ from django.db import models
 
 class Profile(models.Model):
     name = models.CharField(max_length=100)
-    role = models.CharField(max_length=100)
-    greeting = models.CharField(max_length=100)
-    welcome_text = models.CharField(max_length=200)
+    role_es = models.CharField(max_length=100)
+    role_en = models.CharField(max_length=100, blank=True, null=True)
+    greeting_es = models.CharField(max_length=100)
+    greeting_en = models.CharField(max_length=100, blank=True, null=True)
+    welcome_text_es = models.CharField(max_length=200)
+    welcome_text_en = models.CharField(max_length=200, blank=True, null=True)
     profile_pic = models.ImageField(upload_to="profile/", null=True, blank=True)
     start_date = models.DateField(default=datetime(2023, 5, 25))
 

@@ -7,18 +7,19 @@
     <!-- left column - TEXT -->
     <div class="text-center md:text-left flex flex-col items-center md:items-start" data-aos="zoom-in">
       <h1 class="text-4xl md:text-6xl font-bold mb-6 text-light-primary dark:text-dark-primary">
-        {{ profile.greeting }}
+        {{ greeting }}
       </h1>
       <div class="flex items-center gap-4 mb-6" data-aos="fade-up">
         <img src="{% static 'images/gif/welcome_sticker.gif' %}"
              alt="Saludo animado"
              class="w-10 h-10 md:w-12 md:h-12 object-contain align-middle" />
         <p class="text-xl text-light-secondary dark:text-dark-secondary mb-0 leading-none">
-          {{ profile.welcome_text }}
+          {{ welcome_text }}
         </p>
       </div>
       <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6" data-aos="fade-down-left">
-        👨‍💼 Soy {{ profile.role }} con +{{ experience_time }} año(s) de experiencia.
+{#        👨‍💼 Soy {{ profile.role }} con +{{ experience_time }} año(s) de experiencia.#}
+        👨‍💼 Soy {{ role }} con +{{ experience_time }} año(s) de experiencia.
       </p>
       {% for bio in biographies %}
         <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6" data-aos="fade-down-left">

@@ -32,8 +32,20 @@ class WorkInline(admin.TabularInline):
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = ("name", "role", "start_date")
+    list_display = ("name", "role_es", "role_en", "start_date")
     inlines = [BiographyInline, SocialInline, SkillInline, WorkInline]
+
+    fieldsets = (
+        ("Información general", {"fields": ("name", "profile_pic", "start_date")}),
+        (
+            "Contenido en Español",
+            {"fields": ("role_es", "greeting_es", "welcome_text_es")},
+        ),
+        (
+            "Contenido en Inglés",
+            {"fields": ("role_en", "greeting_en", "welcome_text_en")},
+        ),
+    )
 
 
 @admin.register(Biography)

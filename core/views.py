@@ -16,6 +16,14 @@ def home(request):
         for bio in profile.biographies.all()
     ]
 
+    profile_translations = {
+        "role": profile.role_en if lang == "en" else profile.role_es,
+        "greeting": profile.greeting_en if lang == "en" else profile.greeting_es,
+        "welcome_text": profile.welcome_text_en
+        if lang == "en"
+        else profile.welcome_text_es,
+    }
+
     skills_by_category = defaultdict(list)
     for skill in profile.skills.all():
         skills_by_category[skill.category].append(skill.name)
@@ -32,6 +40,7 @@ def home(request):
 
     context = {
         "profile": profile,
+        **profile_translations,
         "biographies": biographies,
         "socials": profile.socials.all(),
         "skills_by_category": dict(skills_by_category),
