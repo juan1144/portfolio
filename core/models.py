@@ -20,10 +20,11 @@ class Biography(models.Model):
     profile = models.ForeignKey(
         Profile, on_delete=models.CASCADE, related_name="biographies"
     )
-    text = models.TextField()
+    text_es = models.TextField()
+    text_en = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return self.text[:50] + "..."
+        return (self.text_es or self.text_en)[:50] + "..."
 
 
 class Social(models.Model):

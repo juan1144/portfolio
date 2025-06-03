@@ -38,7 +38,7 @@ class ProfileAdmin(admin.ModelAdmin):
 
 @admin.register(Biography)
 class BiographyAdmin(admin.ModelAdmin):
-    list_display = ("profile", "text")
+    list_display = ("profile", "text_es", "text_en")
 
 
 @admin.register(Social)

@@ -1,10 +1,10 @@
 {% load static %}
-
+{% load i18n %}
 <nav id="navbar" class="fixed top-6 left-0 w-full z-50 flex justify-center transition-opacity duration-300">
-  <div class="max-w-7xl w-full flex items-center justify-between px-6">
+  <div class="max-w-7xl w-full relative flex items-center px-6">
 
-    <!-- Social icons (navbar left) -->
-    <div class="pointer-events-auto flex items-center space-x-3">
+    <!-- logo and social icons -->
+    <div class="absolute left-0 flex items-center space-x-3">
       <a href="{% url 'core:home' %}" aria-label="Inicio">
         <img src="{% static 'images/logo_no_bg.png' %}"
              alt="Logo personal"
@@ -22,9 +22,8 @@
       {% endfor %}
     </div>
 
-
-    <!-- Float Menu -->
-    <ul class="pointer-events-auto hidden md:flex items-center space-x-4 px-6 py-2
+    <!-- Main menu -->
+    <ul class="mx-auto pointer-events-auto hidden md:flex items-center space-x-4 px-6 py-2
                bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay
                text-sm font-medium text-light-primary dark:text-dark-primary
                shadow-lg ring-1 ring-light-border/10 dark:ring-dark-border/10
@@ -35,83 +34,100 @@
           Inicio
         </a>
       </li>
-
       <li>
         <a href="{% url 'core:projects' %}"
            class="{% if view_name == 'core:projects' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
           Proyectos
         </a>
       </li>
-
       <li>
         <a href="{% url 'core:blog' %}"
            class="{% if view_name == 'core:blog' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
-          blog
+          Blog
         </a>
       </li>
-
     </ul>
 
-    <!-- Responsive menu in mobile -->
-    <div class="pointer-events-auto relative md:hidden">
+    <div class="absolute right-0 flex items-center space-x-3">
 
-      <button id="mobile-menu-toggle"
-              class="flex items-center space-x-2 px-4 py-2 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay
-                     rounded-full shadow ring-1 ring-light-border/10 dark:ring-dark-border/10
-                     text-light-primary dark:text-dark-primary hover:ring-light-accent dark:hover:ring-dark-accent transition">
-        <span>Menu</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down hidden dark:block h-5 w-5 text-dark-primary group-hover:text-white">
-          <path d="m6 9 6 6 6-6"/>
-        </svg>
-      </button>
+      <!-- mobile display menu -->
+      <div class="relative md:hidden">
+        <button id="mobile-menu-toggle"
+                class="flex items-center space-x-2 px-4 py-2 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay
+                       rounded-full shadow ring-1 ring-light-border/10 dark:ring-dark-border/10
+                       text-light-primary dark:text-dark-primary hover:ring-light-accent dark:hover:ring-dark-accent transition">
+          <span>Menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               class="lucide lucide-chevron-down-icon lucide-chevron-down hidden dark:block h-5 w-5 text-dark-primary group-hover:text-white">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
 
-
-      <div id="mobile-menu"
-           class="absolute right-0 mt-2 w-40 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay
-                  shadow-lg rounded-lg ring-1 ring-light-border/10 dark:ring-dark-border/10
-                  text-sm font-medium text-light-primary dark:text-dark-primary hidden transition-opacity">
-        <ul class="py-2 space-y-1">
-          <li>
-            <a href="{% url 'core:home' %}"
-               class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'core:home' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
-              Inicio
-            </a>
-          </li>
-          <li>
-            <a href="{% url 'core:projects' %}"
-               class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'core:projects' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
-              Proyectos
-            </a>
-          </li>
-          <li>
-            <a href="{% url 'core:blog' %}"
-               class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'core:blog' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
-              blog
-            </a>
-          </li>
-        </ul>
+        <div id="mobile-menu"
+             class="absolute right-0 mt-2 w-40 bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay
+                    shadow-lg rounded-lg ring-1 ring-light-border/10 dark:ring-dark-border/10
+                    text-sm font-medium text-light-primary dark:text-dark-primary hidden transition-opacity">
+          <ul class="py-2 space-y-1">
+            <li>
+              <a href="{% url 'core:home' %}"
+                 class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'core:home' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
+                Inicio
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'core:projects' %}"
+                 class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'core:projects' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
+                Proyectos
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'core:blog' %}"
+                 class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'core:blog' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
+                Blog
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
 
+      <!-- language dropdown -->
+      <form action="{% url 'set_language' %}" method="post" class="pointer-events-auto">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="{{ request.path }}">
+        <select name="language" onchange="this.form.submit()"
+                class="bg-transparent border border-light-border dark:border-dark-border rounded px-3 py-1 text-sm text-light-primary dark:text-dark-primary">
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% for lang_code, lang_name in LANGUAGES %}
+            <option value="{{ lang_code }}" {% if lang_code == LANGUAGE_CODE %}selected{% endif %}>{{ lang_name }}</option>
+          {% endfor %}
+        </select>
+      </form>
 
-    <!-- dark mode button -->
-    <div class="pointer-events-auto">
-      <button type="button" data-theme-toggle class="group p-2
-                                                     bg-light-background/90 dark:bg-dark-background/90
-                                                     rounded-full shadow ring-1 ring-light-border/10 dark:ring-dark-border/10
-                                                     hover:ring-light-accent dark:hover:ring-dark-accent transition">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun hidden dark:block h-5 w-5 text-dark-primary group-hover:text-white">
-          <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/>
-          <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
-          <path d="M2 12h2"/>
-          <path d="M20 12h2"/>
-          <path d="m6.34 17.66-1.41 1.41"/>
-          <path d="m19.07 4.93-1.41 1.41"/>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon-icon lucide-moon block dark:hidden h-5 w-5 text-light-primary group-hover:text-black">
-          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-        </svg>
-      </button>
+      <!-- dark|white button -->
+      <div class="pointer-events-auto">
+        <button type="button" data-theme-toggle
+                class="group p-2 bg-light-background/90 dark:bg-dark-background/90
+                       rounded-full shadow ring-1 ring-light-border/10 dark:ring-dark-border/10
+                       hover:ring-light-accent dark:hover:ring-dark-accent transition">
+          <!-- sun icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               class="lucide lucide-sun-icon lucide-sun hidden dark:block h-5 w-5 text-dark-primary group-hover:text-white">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <!-- moon icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               class="lucide lucide-moon-icon lucide-moon block dark:hidden h-5 w-5 text-light-primary group-hover:text-black">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </nav>
