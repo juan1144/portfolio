@@ -1,5 +1,11 @@
 {% extends "base.html" %}
-{% block title %}Juan Peñate · Desarrollador Fullstack{% endblock %}
+{% block title %}
+  {% if language == "es" %}
+    Juan Peñate · Desarrollador Fullstack
+  {% else %}
+    Juan Peñate · Fullstack developer
+  {% endif %}
+{% endblock %}
 {% block content %}
   {% load static %}
   <!-- Hero principal -->
@@ -19,7 +25,11 @@
       </div>
       <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6" data-aos="fade-down-left">
 {#        👨‍💼 Soy {{ profile.role }} con +{{ experience_time }} año(s) de experiencia.#}
-        👨‍💼 Soy {{ role }} con +{{ experience_time }} año(s) de experiencia.
+        {% if language == "es" %}
+          👨‍💼 Soy {{ role }} con +{{ experience_time }} año(s) de experiencia.
+        {% else %}
+          👨‍💼 I'm a {{ role }} with {{ experience_time }}+ year(s) of experience.
+        {% endif %}
       </p>
       {% for bio in biographies %}
         <p class="text-sm text-light-secondary dark:text-dark-secondary mb-6" data-aos="fade-down-left">
@@ -29,14 +39,22 @@
       <div class="flex flex-wrap gap-3 mb-6 justify-center md:justify-start relative">
         <a href="{% url 'core:projects' %}"
            class="px-5 py-2 rounded-full text-sm font-medium text-white bg-light-accent dark:bg-dark-accent hover:opacity-90 transition">
-          Ver proyectos
+          {% if language == "es" %}
+            Ver proyectos
+          {% else %}
+            View projects
+          {% endif %}
         </a>
         <!-- dropdown with button -->
         <div class="relative">
           <button id="contactDropdownBtn"
                   class="px-5 py-2 rounded-full text-sm font-medium border border-light-border dark:border-dark-border text-light-primary dark:text-dark-primary hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition inline-flex items-center"
                   type="button">
-            Contactar
+            {% if language == "es" %}
+              Contactar
+            {% else %}
+              Contact
+            {% endif %}
             <svg class="w-2.5 h-2.5 ml-2" fill="none" viewBox="0 0 6 10" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1l4 4-4 4" />
             </svg>
@@ -61,7 +79,7 @@
     <!-- Right column - profile image -->
     <div class="flex justify-center md:justify-center" data-aos="fade-left">
       {% if profile.profile_pic %}
-        <img src="{{ profile.profile_pic.url }}" alt="Foto de {{ profile.name }}"
+        <img src="{{ profile.profile_pic.url }}" alt="{% if language == "es" %}Foto de {% else %}Picture of {% endif %}{{ profile.name }}"
              class="w-60 h-60 rounded-full border-4 border-light-border dark:border-dark-border shadow-lg object-cover" />
       {% endif %}
     </div>
@@ -76,7 +94,11 @@
            class="lucide lucide-book-icon lucide-book w-5 h-5 text-light-accent dark:text-dark-accent">
         <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/>
       </svg>
-      Conocimientos
+      {% if language == "es" %}
+        Conocimientos
+      {% else %}
+        Knowledge
+      {% endif %}
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -102,7 +124,11 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase w-5 h-5 text-light-accent dark:text-dark-accent">
           <rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 3h-4a2 2 0 0 0-2 2v2h8V5a2 2 0 0 0-2-2z" />
         </svg>
-        Trayectoria
+        {% if language == "es" %}
+          Trayectoria
+        {% else %}
+          Professional background
+        {% endif %}
       </h2>
       <ul class="space-y-5">
         {% for job in works %}

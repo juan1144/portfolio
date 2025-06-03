@@ -1,8 +1,16 @@
 <footer class="bg-light-background py-4 dark:bg-dark-background border-t ... dark:bg-[url('/static/icons/texture.svg')] dark:bg-repeat dark:bg-[length:10px]">
   <div class="max-w-7xl mx-auto px-4 text-center text-sm text-light-secondary dark:text-dark-secondary">
-    Juan Felipe Peñate Hernández - Ingeniero en sistemas
+    {% if language == "es" %}
+      Juan Felipe Peñate Hernández - Ingeniero en sistemas
+    {% else %}
+      Juan Felipe Peñate Hernández - Computer Systems Engineer
+    {% endif %}
   </div>
   <div class="max-w-7xl mx-auto px-4 text-center text-xs text-light-secondary dark:text-dark-secondary">
-    ©2025 - Créditos de la web
+    {% if language == "es" %}
+      ©2025 - Créditos de la web
+    {% else %}
+      ©2025 - Website credits
+    {% endif %}
   </div>
 </footer>

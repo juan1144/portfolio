@@ -66,6 +66,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "core.context_processors.current_view_name",
                 "core.context_processors.social_links",
+                "core.context_processors.current_language",
             ],
         },
     },

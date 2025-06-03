@@ -9,18 +9,18 @@ from core.models import Profile
 
 def home(request):
     profile = get_object_or_404(Profile, id=1)
-    lang = get_language()
+    language = get_language()
 
     biographies = [
-        bio.text_en if lang == "en" else bio.text_es
+        bio.text_en if language == "en" else bio.text_es
         for bio in profile.biographies.all()
     ]
 
     profile_translations = {
-        "role": profile.role_en if lang == "en" else profile.role_es,
-        "greeting": profile.greeting_en if lang == "en" else profile.greeting_es,
+        "role": profile.role_en if language == "en" else profile.role_es,
+        "greeting": profile.greeting_en if language == "en" else profile.greeting_es,
         "welcome_text": profile.welcome_text_en
-        if lang == "en"
+        if language == "en"
         else profile.welcome_text_es,
     }
 
@@ -46,6 +46,7 @@ def home(request):
         "skills_by_category": dict(skills_by_category),
         "works": profile.works.all(),
         "experience_time": experience_time,
+        "language": language,
     }
     return render(request, "core/home.html", context)
 
