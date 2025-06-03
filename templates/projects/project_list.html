@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {% if language == "es" %}
+    Juan Peñate · Proyectos
+  {% else %}
+    Juan Peñate · Projects
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% load static %}
+  <section class="max-w-6xl mx-auto px-6 py-10">
+      <!-- Título principal -->
+    <h1 class="text-3xl md:text-5xl font-bold text-light-primary dark:text-dark-primary text-center mb-4">
+      {% if language == "es" %}
+        Mis proyectos
+      {% else %}
+        My Projects
+      {% endif %}
+    </h1>
+
+    <p class="text-light-secondary dark:text-dark-secondary text-center max-w-xl mx-auto mb-12">
+      {% if language == "es" %}
+        Aquí encontrarás una selección de proyectos que he desarrollado, desde sistemas complejos hasta pequeñas herramientas útiles.
+      {% else %}
+        Here you'll find a selection of projects I've built — from complex systems to small handy tools.
+      {% endif %}
+    </p>
+
+      <!-- Listado de proyectos -->
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Proyecto 1 -->
+      <div class="bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+        <img src="{% static 'images/projects/fitomenu/logo.jpg' %}" alt="Proyecto 1" class="rounded-md mb-4 w-full object-cover h-48">
+        <h3 class="text-xl font-semibold text-light-primary dark:text-dark-primary mb-2">FitoMenu</h3>
+        <p class="text-sm text-light-secondary dark:text-dark-secondary mb-4">
+          {% if language == "es" %}
+            Sistema de gestión para restaurantes con menú digital, pedidos y panel de cocina.
+          {% else %}
+            Restaurant management system with digital menu, orders, and kitchen dashboard.
+          {% endif %}
+        </p>
+        <div class="flex items-center justify-between mt-4">
+          <a href="#" class="text-sm font-medium text-light-accent dark:text-dark-accent hover:underline">
+            {% if language == "es" %} Ver proyecto {% else %} View Project {% endif %}
+          </a>
+
+          <a href="https://github.com/juan1144/fitomenu" target="_blank"
+             class="text-light-secondary dark:text-dark-secondary hover:text-light-accent dark:hover:text-dark-accent transition"
+             aria-label="Ver en GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.24c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 0 0-1.34-1.76c-1.1-.75.08-.74.08-.74a2.53 2.53 0 0 1 1.85 1.25 2.57 2.57 0 0 0 3.52 1 2.55 2.55 0 0 1 .76-1.6c-2.67-.3-5.48-1.34-5.48-5.94a4.63 4.63 0 0 1 1.24-3.2 4.3 4.3 0 0 1 .12-3.15s1-.32 3.3 1.22a11.35 11.35 0 0 1 6 0C16.95 6.4 18 6.72 18 6.72a4.3 4.3 0 0 1 .12 3.15 4.63 4.63 0 0 1 1.24 3.2c0 4.61-2.82 5.63-5.5 5.93a2.87 2.87 0 0 1 .82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+        <!-- Proyecto 2 -->
+      <div class="bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+    {#      <img src="{% static 'images/sample_project2.jpg' %}" alt="Proyecto 2" class="rounded-md mb-4 w-full object-cover h-48">#}
+        <img src="#" alt="Proyecto 2" class="rounded-md mb-4 w-full object-cover h-48">
+        <h3 class="text-xl font-semibold text-light-primary dark:text-dark-primary mb-2">DataX</h3>
+        <p class="text-sm text-light-secondary dark:text-dark-secondary mb-4">
+          {% if language == "es" %}
+            Plataforma para análisis de datos, generación de reportes e integración con Airflow.
+          {% else %}
+            Platform for data analysis, reporting and Airflow integration.
+          {% endif %}
+        </p>
+        <div class="flex items-center justify-between mt-4">
+          <a href="#" class="text-sm font-medium text-light-accent dark:text-dark-accent hover:underline">
+            {% if language == "es" %} Ver proyecto {% else %} View Project {% endif %}
+          </a>
+
+          <a href="#" target="_blank"
+             class="text-light-secondary dark:text-dark-secondary hover:text-light-accent dark:hover:text-dark-accent transition"
+             aria-label="Ver en GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.24c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 0 0-1.34-1.76c-1.1-.75.08-.74.08-.74a2.53 2.53 0 0 1 1.85 1.25 2.57 2.57 0 0 0 3.52 1 2.55 2.55 0 0 1 .76-1.6c-2.67-.3-5.48-1.34-5.48-5.94a4.63 4.63 0 0 1 1.24-3.2 4.3 4.3 0 0 1 .12-3.15s1-.32 3.3 1.22a11.35 11.35 0 0 1 6 0C16.95 6.4 18 6.72 18 6.72a4.3 4.3 0 0 1 .12 3.15 4.63 4.63 0 0 1 1.24 3.2c0 4.61-2.82 5.63-5.5 5.93a2.87 2.87 0 0 1 .82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+        <!-- Proyecto 3 -->
+      <div class="bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+    {#      <img src="{% static 'images/sample_project3.jpg' %}" alt="Proyecto 3" class="rounded-md mb-4 w-full object-cover h-48">#}
+        <img src="#" alt="Proyecto 3" class="rounded-md mb-4 w-full object-cover h-48">
+        <h3 class="text-xl font-semibold text-light-primary dark:text-dark-primary mb-2">Portfolio</h3>
+        <p class="text-sm text-light-secondary dark:text-dark-secondary mb-4">
+          {% if language == "es" %}
+            Sitio web personal para mostrar habilidades, experiencia y proyectos.
+          {% else %}
+            Personal website to showcase skills, experience and projects.
+          {% endif %}
+        </p>
+        <div class="flex items-center justify-between mt-4">
+          <a href="#" class="text-sm font-medium text-light-accent dark:text-dark-accent hover:underline">
+            {% if language == "es" %} Ver proyecto {% else %} View Project {% endif %}
+          </a>
+          <a href="#" target="_blank"
+             class="text-light-secondary dark:text-dark-secondary hover:text-light-accent dark:hover:text-dark-accent transition"
+             aria-label="Ver en GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.24c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 0 0-1.34-1.76c-1.1-.75.08-.74.08-.74a2.53 2.53 0 0 1 1.85 1.25 2.57 2.57 0 0 0 3.52 1 2.55 2.55 0 0 1 .76-1.6c-2.67-.3-5.48-1.34-5.48-5.94a4.63 4.63 0 0 1 1.24-3.2 4.3 4.3 0 0 1 .12-3.15s1-.32 3.3 1.22a11.35 11.35 0 0 1 6 0C16.95 6.4 18 6.72 18 6.72a4.3 4.3 0 0 1 .12 3.15 4.63 4.63 0 0 1 1.24 3.2c0 4.61-2.82 5.63-5.5 5.93a2.87 2.87 0 0 1 .82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

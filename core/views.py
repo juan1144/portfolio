@@ -63,7 +63,7 @@ def home(request):
 
 
 def projects(request):
-    return render(request, "base.html")
+    return render(request, "projects/project_list.html")
 
 
 def blog(request):
