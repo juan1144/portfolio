@@ -24,6 +24,17 @@ def home(request):
         else profile.welcome_text_es,
     }
 
+    jobs = [
+        {
+            "company": work.company,
+            "position": work.position_en if language == "en" else work.position_es,
+            "start": work.start_en if language == "en" else work.start_es,
+            "end": work.end_en if language == "en" else work.end_en,
+            "logo": work.logo,
+        }
+        for work in profile.works.all()
+    ]
+
     skills_by_category = defaultdict(list)
     for skill in profile.skills.all():
         skills_by_category[skill.category].append(skill.name)
@@ -44,7 +55,7 @@ def home(request):
         "biographies": biographies,
         "socials": profile.socials.all(),
         "skills_by_category": dict(skills_by_category),
-        "works": profile.works.all(),
+        "jobs": jobs,
         "experience_time": experience_time,
         "language": language,
     }

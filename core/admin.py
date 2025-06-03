@@ -66,4 +66,13 @@ class SkillAdmin(admin.ModelAdmin):
 
 @admin.register(Work)
 class WorkAdmin(admin.ModelAdmin):
-    list_display = ("profile", "company", "position", "start", "end")
+    list_display = (
+        "profile",
+        "company",
+        "position_es",
+        "position_en",
+        "start_es",
+        "start_en",
+        "end_es",
+        "end_en",
+    )

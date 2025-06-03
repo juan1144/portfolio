@@ -64,9 +64,12 @@ class Skill(models.Model):
 class Work(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name="works")
     company = models.CharField(max_length=100)
-    position = models.CharField(max_length=100)
-    start = models.CharField(max_length=50)
-    end = models.CharField(max_length=50)
+    position_es = models.CharField(max_length=100)
+    position_en = models.CharField(max_length=100, null=True, blank=True)
+    start_es = models.CharField(max_length=50)
+    start_en = models.CharField(max_length=50, null=True, blank=True)
+    end_es = models.CharField(max_length=50)
+    end_en = models.CharField(max_length=50, null=True, blank=True)
     logo = models.ImageField(upload_to="companies/", null=True, blank=True)
 
     def __str__(self):
