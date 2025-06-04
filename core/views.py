@@ -66,5 +66,21 @@ def projects(request):
     return render(request, "projects/project_list.html")
 
 
+def project_detail_fitomenu(request):
+    slideshow_images = [
+        "images/projects/fitomenu/slide1.png",
+        "images/projects/fitomenu/slide2.png",
+        "images/projects/fitomenu/slide3.png",
+    ]
+
+    return render(
+        request,
+        "projects/proyect_detail.html",
+        {
+            "slideshow_images": slideshow_images,
+        },
+    )
+
+
 def blog(request):
     return render(request, "base.html")

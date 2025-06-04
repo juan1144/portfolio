@@ -1,0 +1,15 @@
+<!--
+usage { % include "common/_codeblock.html" with code=codeblock % }
+CODE should be passed by context from views
+example: codeblock = """[add-code]"""
+-->
+<div class="relative group text-sm font-mono my-6">
+  <pre><code class="language-python">{{ code|safe }}</code></pre>
+  <button
+    class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-2 py-1 text-xs bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border text-light-primary dark:text-dark-primary rounded hover:bg-light-accent dark:hover:bg-dark-accent hover:text-white copy-btn"
+    data-code
+    data-original-text="{% if language == 'es' %}Copiar{% else %}Copy{% endif %}"
+    data-copied-text="{% if language == 'es' %}✓ Copiado{% else %}✓ Copied{% endif %}">
+    {% if language == "es" %}Copiar{% else %}Copy{% endif %}
+  </button>
+</div>
