@@ -1,0 +1,82 @@
+/* CUSTOM TOOLTIPS CSS */
+.tooltip-text {
+  position: absolute;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+  pointer-events: none;
+}
+
+/* Visibility */
+.tooltip-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Arrow */
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* Tooltip direction */
+.tooltip-text[data-placement="top"]::after {
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px 5px 0 5px;
+  border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+}
+
+.tooltip-text[data-placement="bottom"]::after {
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent;
+}
+
+.tooltip-text[data-placement="left"]::after {
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.8);
+}
+
+.tooltip-text[data-placement="right"]::after {
+  top: 50%;
+  left: -5px;
+  transform: translateY(-50%);
+  border-width: 5px 5px 5px 0;
+  border-color: transparent rgba(0, 0, 0, 0.8) transparent transparent;
+}
+
+/* Dark mode support */
+.dark .tooltip-text {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
+.dark .tooltip-text[data-placement="top"]::after {
+  border-color: rgba(255, 255, 255, 0.9) transparent transparent transparent;
+}
+.dark .tooltip-text[data-placement="bottom"]::after {
+  border-color: transparent transparent rgba(255, 255, 255, 0.9) transparent;
+}
+.dark .tooltip-text[data-placement="left"]::after {
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.9);
+}
+.dark .tooltip-text[data-placement="right"]::after {
+  border-color: transparent rgba(255, 255, 255, 0.9) transparent transparent;
+}
