@@ -1,12 +1,14 @@
 from django.shortcuts import render
 
 
+# Projects menu
 def projects(request):
     """Render the list of projects."""
     return render(request, "projects/project_list.html")
 
 
-def project_detail_fitomenu(request):
+# Projects details by separate
+def fitomenu(request):
     """Render the detail page for the 'Fitomenu' project."""
     slideshow_images_1 = [
         "images/projects/fitomenu/slide1_1.png",

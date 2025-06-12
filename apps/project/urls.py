@@ -8,7 +8,7 @@ urlpatterns = [
     path("", projects.projects, name="project"),
     path(
         "fitomenu/",
-        projects.project_detail_fitomenu,
+        projects.fitomenu,
         name="project_detail_fitomenu",
     ),
 ]
