@@ -39,8 +39,8 @@
         </a>
       </li>
       <li>
-        <a href="{% url 'core:projects' %}"
-           class="{% if view_name == 'core:projects' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
+        <a href="{% url 'project:project' %}"
+           class="{% if view_name == 'project:project' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
           {% if language|default:"en" == "en" %}
             Projects
           {% else %}
@@ -49,8 +49,8 @@
         </a>
       </li>
       <li>
-        <a href="{% url 'core:blog' %}"
-           class="{% if view_name == 'core:blog' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
+        <a href="{% url 'blog:blog' %}"
+           class="{% if view_name == 'blog:blog' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
           {% if language|default:"en" == "en" %}
             Blog
           {% else %}
@@ -92,8 +92,8 @@
               </a>
             </li>
             <li>
-              <a href="{% url 'core:projects' %}"
-                 class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'core:projects' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
+              <a href="{% url 'project:project' %}"
+                 class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'project:project' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
                 {% if language|default:"en" == "en" %}
                   Projects
                 {% else %}
@@ -102,8 +102,8 @@
               </a>
             </li>
             <li>
-              <a href="{% url 'core:blog' %}"
-                 class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'core:blog' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
+              <a href="{% url 'blog:blog' %}"
+                 class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'blog:blog' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
                 {% if language|default:"en" == "en" %}
                   Blog
                 {% else %}

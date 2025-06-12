@@ -1,13 +1,14 @@
 from collections import defaultdict
 from datetime import datetime
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.utils.translation import get_language
 
-from core.models import Profile
+from apps.core.models.home import Profile
 
 
 def home(request):
+    """Render the home page with profile-related data."""
     profile = get_object_or_404(Profile, id=1)
     language = get_language()
 
@@ -60,35 +61,3 @@ def home(request):
         "language": language,
     }
     return render(request, "core/home.html", context)
-
-
-def projects(request):
-    return render(request, "projects/project_list.html")
-
-
-def project_detail_fitomenu(request):
-    slideshow_images_1 = [
-        "images/projects/fitomenu/slide1_1.png",
-        "images/projects/fitomenu/slide1_2.png",
-        "images/projects/fitomenu/slide1_3.png",
-        "images/projects/fitomenu/slide1_4.png",
-    ]
-
-    slideshow_images_2 = [
-        "images/projects/fitomenu/slide2_1.png",
-        "images/projects/fitomenu/slide2_2.png",
-        "images/projects/fitomenu/slide2_3.png",
-    ]
-
-    return render(
-        request,
-        "projects/proyect_detail.html",
-        {
-            "slideshow_images_1": slideshow_images_1,
-            "slideshow_images_2": slideshow_images_2,
-        },
-    )
-
-
-def blog(request):
-    return render(request, "base.html")

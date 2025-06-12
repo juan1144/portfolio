@@ -4,10 +4,9 @@ default_language_version:
   python: python3.12
 exclude: >
   (?x)^(
-      config/.*/migrations/.* |
+      apps/.*/migrations/.* |
       manage.py
   )$
-
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
@@ -40,40 +39,76 @@ repos:
           )$
       - id: check-merge-conflict
       - id: check-docstring-first
-
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.3.0
+    rev: v0.11.13
     hooks:
-      - id: ruff  # Run the linter
-      - id: ruff-format  # Run the formatter
-
+      - id: ruff # Run the linter.
+      - id: ruff-format # Run the formatter.
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.19.1
+    rev: v3.20.0
     hooks:
       - id: pyupgrade
-        args: [--py312-plus]
-
+        args:
+          - --py312-plus
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 1.22.2
+    rev: 1.25.0
     hooks:
       - id: django-upgrade
-        args: [--target-version=5.1]
-
+        args:
+          - --target-version=5.1
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.8.0
+    rev: v1.16.0
     hooks:
       - id: mypy
-        args: [--ignore-missing-imports]
+        args:
+          - --no-strict-optional
+          - --ignore-missing-imports
+          - --enable-incomplete-feature=Unpack
         additional_dependencies:
+          - celery
+          - django-celery-beat
+          - django-celery-results
+          - django-debug-toolbar
+          - django-import-export
+          - django-linear-migrations
+          - django-phonenumber-field
           - django-stubs
+          - django-widget-tweaks
+          - django_htmx
+          - djangorestframework
           - djangorestframework-stubs
-
+          - drf-spectacular
+          - drf-spectacular-sidecar
+          - pandas
+          - phonenumberslite
+          - psycopg
+          - environs
+          - python-decouple
   - repo: https://github.com/rtts/djhtml
-    rev: 3.0.7
+    rev: 3.0.8
     hooks:
       - id: djhtml
-        args: [--tabwidth=2]
-
+        args:
+          - --tabwidth=2
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v9.28.0
+    hooks:
+      - id: eslint
+        files: ^static/
+        types: [ javascript, ts ]
+        exclude: >
+          (?x)^(
+              static/.*\.min\.(js|css)$|
+              static/.*/bootstrap/.*|
+              static/.*/htmx/.*
+              static/src/.*
+          )$
+        args:
+          - --fix
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.10.0.1
+    hooks:
+      - id: shellcheck
   - repo: local
     hooks:
       - id: check-novalidate
@@ -82,7 +117,6 @@ repos:
         language: pygrep
         entry: novalidate
         types: [ html ]
-
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.10.0
     hooks:

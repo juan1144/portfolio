@@ -13,4 +13,56 @@ dependencies = [
   "requests>=2.32.3",
   "psycopg[binary]>=3.2.6",
   "pillow>=11.2.1",
+  "ruff>=0.11.13",
+  "djhtml>=3.0.8",
 ]
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main", "mypy_drf_plugin.main"]
+warn_unused_ignores = true
+
+[tool.django-stubs]
+django_settings_module = "config.settings"
+
+[tool.ruff]
+extend-exclude = ["migrations", "manage.py"]
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 72
+
+[tool.ruff.lint]
+select = [
+  "A", # flake8-builtins
+  "ARG", # flake8-unused-arguments
+  "B", # flake8-bugbear
+  "COM", # flake8-commas
+  "C4", # flake8-comprehensions
+  "D", # pydocstyle
+  "DJ", # flake8-django
+  "E", # pycodestyle
+  "F", # pyflakes
+  "I", # isort
+  "INP", # flake8-no-pep420
+  "SIM", # flake8-simplify
+  "T20", # flake8-print
+  "UP", # pyupgrade
+  "Q", # flake8-quotes
+  "W", # warning
+  "N", # pep8-naming
+  "PD", # pandas-vet
+]
+ignore = [
+  "D100", # Missing docstring in public module
+  "D104", # Missing docstring in public package
+  "E203", # Whitespace before punctuation
+  "PD002", # Avoid `inplace=True`; it has inconsistent behavior
+  "COM812",
+  "DJ008", # Missing `__str__` method for class
+  "DJ001", # Avoid using `null=True` on string-based fields such as `CharField`
+  "ARG001", # ARG001 Unused function argument: `request`
+]
+unfixable = ["B"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"

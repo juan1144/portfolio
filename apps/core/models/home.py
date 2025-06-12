@@ -2,9 +2,12 @@
 from datetime import datetime
 
 from django.db import models
+from django.utils.translation import get_language
 
 
 class Profile(models.Model):
+    """Represents a user's personal profile containing general information."""
+
     name = models.CharField(max_length=100)
     role_es = models.CharField(max_length=100)
     role_en = models.CharField(max_length=100, blank=True, null=True)
@@ -16,10 +19,13 @@ class Profile(models.Model):
     start_date = models.DateField(default=datetime(2023, 5, 25))
 
     def __str__(self):
+        """Show in admin panel."""
         return self.name
 
 
 class Biography(models.Model):
+    """Stores biographical information related to a Profile."""
+
     profile = models.ForeignKey(
         Profile, on_delete=models.CASCADE, related_name="biographies"
     )
@@ -27,10 +33,13 @@ class Biography(models.Model):
     text_en = models.TextField(blank=True, null=True)
 
     def __str__(self):
+        """Show in admin panel."""
         return (self.text_es or self.text_en)[:50] + "..."
 
 
 class Social(models.Model):
+    """Represents a social media or contact link associated with a Profile."""
+
     profile = models.ForeignKey(
         Profile, on_delete=models.CASCADE, related_name="socials"
     )
@@ -40,10 +49,13 @@ class Social(models.Model):
     show_in_navbar = models.BooleanField(default=False)
 
     def __str__(self):
+        """Show in admin panel."""
         return self.name
 
 
 class Skill(models.Model):
+    """Represents a professional skill categorized by domain."""
+
     CATEGORY_CHOICES = [
         ("Frontend", "Frontend"),
         ("Backend", "Backend"),
@@ -58,10 +70,13 @@ class Skill(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
+        """Show in admin panel."""
         return f"{self.category} - {self.name}"
 
 
 class Work(models.Model):
+    """Describes a work experience or job position held by a user."""
+
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name="works")
     company = models.CharField(max_length=100)
     position_es = models.CharField(max_length=100)
@@ -73,4 +88,9 @@ class Work(models.Model):
     logo = models.ImageField(upload_to="companies/", null=True, blank=True)
 
     def __str__(self):
-        return f"{self.position} @ {self.company}"
+        """Show in admin panel with language-aware position."""
+        # Get position based on current language
+        position = self.position_es
+        if get_language() == "en" and self.position_en:
+            position = self.position_en
+        return f"{position} @ {self.company}"
