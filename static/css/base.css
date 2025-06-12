@@ -1026,6 +1026,18 @@ video {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
+.bg-\[url\(\'\/static\/icons\/texture-light\.svg\'\)\] {
+  background-image: url('/static/icons/texture-light.svg');
+}
+
+.bg-\[url\(\'static\/icons\/texture-2\.svg\'\)\] {
+  background-image: url('static/icons/texture-2.svg');
+}
+
+.bg-\[url\(\'\/static\/icons\/texture-2\.svg\'\)\] {
+  background-image: url('/static/icons/texture-2.svg');
+}
+
 .from-white\/50 {
   --tw-gradient-from: rgb(255 255 255 / 0.5) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
@@ -1034,6 +1046,14 @@ video {
 
 .to-light-backgroundOverlay {
   --tw-gradient-to: #ffffffE6 var(--tw-gradient-to-position);
+}
+
+.bg-\[length\:10px\] {
+  background-size: 10px;
+}
+
+.bg-repeat {
+  background-repeat: repeat;
 }
 
 .object-contain {
@@ -1196,7 +1216,7 @@ video {
 
 .text-dark-primary {
   --tw-text-opacity: 1;
-  color: rgb(243 243 244 / var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .text-light-accent {
@@ -1206,12 +1226,12 @@ video {
 
 .text-light-primary {
   --tw-text-opacity: 1;
-  color: rgb(38 38 41 / var(--tw-text-opacity));
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-light-secondary {
   --tw-text-opacity: 1;
-  color: rgb(108 108 117 / var(--tw-text-opacity));
+  color: rgb(12 17 29 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -1462,12 +1482,12 @@ video {
 
 :is(.dark .dark\:text-dark-primary) {
   --tw-text-opacity: 1;
-  color: rgb(243 243 244 / var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 :is(.dark .dark\:text-dark-secondary) {
   --tw-text-opacity: 1;
-  color: rgb(147 147 156 / var(--tw-text-opacity));
+  color: rgb(251 251 255 / var(--tw-text-opacity));
 }
 
 :is(.dark .dark\:ring-dark-border\/10) {

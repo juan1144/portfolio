@@ -18,7 +18,11 @@
     {% include "common/_navbar.html" %}
 
     <!-- Main content -->
-    <main class="min-h-screen pt-24 dark:bg-[url('/static/icons/texture.svg')] dark:bg-repeat dark:bg-[length:10px]">
+{#    <main class="min-h-screen pt-24 dark:bg-[url('/static/icons/texture.svg')] dark:bg-repeat dark:bg-[length:10px]">#}
+    <main class="min-h-screen pt-24
+                 bg-[url('/static/icons/texture-2.svg')] bg-repeat bg-[length:10px]
+                 dark:bg-[url('/static/icons/texture.svg')] dark:bg-repeat dark:bg-[length:10px]">
+
       {% block content %}{% endblock %}
     </main>
 
