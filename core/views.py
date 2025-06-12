@@ -67,17 +67,25 @@ def projects(request):
 
 
 def project_detail_fitomenu(request):
-    slideshow_images = [
-        "images/projects/fitomenu/slide1.png",
-        "images/projects/fitomenu/slide2.png",
-        "images/projects/fitomenu/slide3.png",
+    slideshow_images_1 = [
+        "images/projects/fitomenu/slide1_1.png",
+        "images/projects/fitomenu/slide1_2.png",
+        "images/projects/fitomenu/slide1_3.png",
+        "images/projects/fitomenu/slide1_4.png",
+    ]
+
+    slideshow_images_2 = [
+        "images/projects/fitomenu/slide2_1.png",
+        "images/projects/fitomenu/slide2_2.png",
+        "images/projects/fitomenu/slide2_3.png",
     ]
 
     return render(
         request,
         "projects/proyect_detail.html",
         {
-            "slideshow_images": slideshow_images,
+            "slideshow_images_1": slideshow_images_1,
+            "slideshow_images_2": slideshow_images_2,
         },
     )
 

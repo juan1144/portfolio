@@ -1,22 +1,27 @@
 /* JAVASCRIPT TO RENDER SLIDESHOW */
 document.addEventListener("DOMContentLoaded", () => {
-  const slidesContainer = document.querySelector(".carousel-slides");
-  const slides = slidesContainer.querySelectorAll("img");
-  const totalSlides = slides.length;
+  const slideshows = document.querySelectorAll(".slideshow");
 
-  let currentSlide = 0;
+  slideshows.forEach(slideshow => {
+    const slidesContainer = slideshow.querySelector(".carousel-slides");
+    const slides = slidesContainer.querySelectorAll("img");
+    const prevBtn = slideshow.querySelector(".prevSlide");
+    const nextBtn = slideshow.querySelector(".nextSlide");
 
-  const updateSlide = () => {
-    slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-  };
+    let currentSlide = 0;
 
-  document.getElementById("prevSlide").addEventListener("click", () => {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    updateSlide();
-  });
+    const updateSlide = () => {
+      slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    };
 
-  document.getElementById("nextSlide").addEventListener("click", () => {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateSlide();
+    prevBtn.addEventListener("click", () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateSlide();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateSlide();
+    });
   });
 });

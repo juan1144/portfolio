@@ -5,85 +5,270 @@
   Juan Peñate · FitoMenu
 {% endblock %}
 
-{% block header %}
-{% endblock %}
-
 {% block content %}
-  <section class="max-w-4xl mx-auto px-6 py-12">
+  <section class="max-w-4xl mx-auto px-6 py-12 space-y-12">
 
-    <h1 class="text-3xl md:text-5xl font-bold text-light-primary dark:text-dark-primary mb-4">
-      FitoMenu
-    </h1>
-
-    <p class="text-md text-light-primary dark:text-dark-secondary mb-4">
-      {% if language == "es" %}
-        Sistema de gestión para restaurantes con menú digital, pedidos y panel de cocina.
-      {% else %}
-        Restaurant management system with digital menu, orders, and kitchen dashboard.
-      {% endif %}
-    </p>
-
-  <!-- slideshow -->
-    {% include "common/_slideshow.html" with images=slideshow_images %}
-
-  <!-- Imagen destacada -->
-    <div class="rounded-xl overflow-hidden mb-10 shadow-md">
-{#    <img src="{% static 'images/projects/fitomenu/cover.jpg' %}" alt="FitoMenu Cover" class="w-full h-auto object-cover" />#}
-      <img src="#" alt="FitoMenu Cover" class="w-full h-auto object-cover" />
+  <!-- Título y descripción breve -->
+    <div class="mb-1">
+      <h1 class="text-3xl md:text-5xl font-bold text-light-primary dark:text-dark-primary mb-2" data-aos="fade-right">FitoMenu</h1>
+      <p class="text-lg text-light-secondary dark:text-dark-secondary" data-aos="fade-right">
+        {% if language == "es" %}
+          Sistema de gestión para restaurantes con menú digital, pedidos y panel de cocina.
+        {% else %}
+          Restaurant management system with digital menu, orders, and kitchen dashboard.
+        {% endif %}
+      </p>
     </div>
 
-  <!-- Secciones del contenido -->
-    <div class="space-y-10">
+  <!-- Slideshow 1 -->
+    {% include "common/_slideshow.html" with images=slideshow_images_1 %}
 
-    <!-- Párrafo -->
-      <div>
-        <p class="text-light-secondary dark:text-dark-secondary text-base leading-relaxed">
-          {% if language == "es" %}
-            FitoMenu nació como una solución ligera, moderna y completamente responsiva para restaurantes pequeños...
-          {% else %}
-            FitoMenu was born as a lightweight, modern and fully responsive solution for small restaurants...
-          {% endif %}
-        </p>
-      </div>
-
-    <!-- Imagen con texto -->
-      <div class="space-y-2">
-{#      <img src="{% static 'images/projects/fitomenu/admin_panel.jpg' %}" alt="Admin panel" class="rounded-lg shadow" />#}
-        <img src="#" alt="Admin panel" class="rounded-lg shadow" />
-        <p class="text-sm text-light-secondary dark:text-dark-secondary">
-          {% if language == "es" %}
-            Panel de administración para gestionar productos y configuración general del restaurante.
-          {% else %}
-            Admin panel to manage products and general settings of the restaurant.
-          {% endif %}
-        </p>
-      </div>
-
-    <!-- Lista de funcionalidades -->
-      <div>
-        <h2 class="text-xl font-semibold text-light-primary dark:text-dark-primary mb-2">
-          {% if language == "es" %} Funcionalidades principales {% else %} Key Features {% endif %}
-        </h2>
-        <ul class="list-disc pl-5 text-light-secondary dark:text-dark-secondary space-y-1">
-          <li>Menú digital escaneable vía QR</li>
-          <li>Pedidos en tiempo real</li>
-          <li>Dashboard para cocina</li>
-          <li>Responsive y optimizado</li>
-        </ul>
-      </div>
-
-    <!-- Repositorio GitHub -->
-      <div>
-        <a href="https://github.com/juan1144/fitomenu"
-           class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-light-accent hover:bg-opacity-90 dark:bg-dark-accent rounded-md shadow"
-           target="_blank"
-           rel="noopener noreferrer">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5..."/></svg>
-          {% if language == "es" %} Ver código fuente {% else %} View Source Code {% endif %}
-        </a>
-      </div>
-
+  <!-- Introducción del proyecto -->
+    <div class="space-y-4" data-aos="fade-up">
+      <h2 class="text-lg font-semibold text-light-primary dark:text-dark-primary flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-light-accent dark:text-dark-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" />
+        </svg>
+        {% if language == "es" %} Acerca del proyecto {% else %} About the Project {% endif %}
+      </h2>
+      <p class="text-light-secondary dark:text-dark-secondary text-lg leading-relaxed">
+        {% if language == "es" %}
+          FitoMenu es una aplicación web desarrollada para el restaurante local Pollo Fito, con el objetivo de modernizar y digitalizar su proceso de atención al cliente y gestión interna. El sistema permite a los clientes acceder al menú mediante un código QR desde su dispositivo móvil, visualizar productos disponibles y realizar pedidos en tiempo real. Internamente, el personal de cocina recibe estos pedidos a través de una interfaz web para gestionarlos de manera más ágil y ordenada.
+        {% else %}
+          FitoMenu is a web-based solution designed to optimize the management experience for small restaurants. It provides essential features like digital QR menus, real-time order handling, a visual kitchen dashboard, and an intuitive admin panel. The system is lightweight, responsive, and easy to adapt to any restaurant setting.
+        {% endif %}
+      </p>
+      <p class="text-light-secondary dark:text-dark-secondary text-lg leading-relaxed">
+        {% if language == "es" %}
+          Este proyecto surgió de la necesidad de optimizar los tiempos de atención, reducir errores manuales y mejorar la experiencia del cliente. La solución se diseñó considerando las particularidades de un micronegocio, permitiendo una implementación gradual, intuitiva y sostenible en el tiempo.
+        {% else %}
+          FitoMenu is a web-based solution designed to optimize the management experience for small restaurants. It provides essential features like digital QR menus, real-time order handling, a visual kitchen dashboard, and an intuitive admin panel. The system is lightweight, responsive, and easy to adapt to any restaurant setting.
+        {% endif %}
+      </p>
     </div>
+
+  <!-- Stack tecnológico -->
+    <div class="pt-8 space-y-4" data-aos="fade-right">
+      <h2 class="text-lg font-semibold text-light-primary dark:text-dark-primary flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-light-accent dark:text-dark-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M9 9h6v6H9z" /><path d="M3 9h2v6H3zM19 9h2v6h-2z" /><path d="M9 3v2M15 3v2M9 19v2M15 19v2" /><path d="M5 5h14v14H5z" />
+        </svg>
+        {% if language == "es" %} Tecnologías utilizadas {% else %} Technologies used {% endif %}
+      </h2>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+    <!-- Django -->
+      <a href="https://www.djangoproject.com/" target="_blank" rel="noopener noreferrer"
+         class="flex flex-col items-center justify-between text-center p-4 bg-gradient-to-b from-white/50 to-light-backgroundOverlay dark:from-dark-background/40 dark:to-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl shadow-sm hover:shadow-md transition group"
+         data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-offset="0">
+        <img src="{% static 'images/logos/django.svg' %}" alt="Django" class="w-15 h-15 mb-3 transition-transform group-hover:scale-110">
+        <span class="font-medium text-lg text-light-primary dark:text-dark-primary">Django</span>
+      </a>
+
+    <!-- Bootstrap -->
+      <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer"
+         class="flex flex-col items-center justify-between text-center p-4 bg-gradient-to-b from-white/50 to-light-backgroundOverlay dark:from-dark-background/40 dark:to-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl shadow-sm hover:shadow-md transition group"
+         data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-offset="0">
+        <img src="{% static 'images/logos/bootstrap.svg' %}" alt="Bootstrap" class="w-12 h-12 mb-3 transition-transform group-hover:scale-110">
+        <span class="font-medium text-lg text-light-primary dark:text-dark-primary">Bootstrap</span>
+      </a>
+
+    <!-- PostgreSQL -->
+      <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer"
+         class="flex flex-col items-center justify-between text-center p-4 bg-gradient-to-b from-white/50 to-light-backgroundOverlay dark:from-dark-background/40 dark:to-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl shadow-sm hover:shadow-md transition group"
+         data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0">
+        <img src="{% static 'images/logos/postgres.svg' %}" alt="PostgreSQL" class="w-12 h-12 mb-3 transition-transform group-hover:scale-110">
+        <span class="font-medium text-lg text-light-primary dark:text-dark-primary">PostgreSQL</span>
+      </a>
+
+    <!-- HTMX -->
+      <a href="https://htmx.org/" target="_blank" rel="noopener noreferrer"
+         class="flex flex-col items-center justify-between text-center p-4 bg-gradient-to-b from-white/50 to-light-backgroundOverlay dark:from-dark-background/40 dark:to-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl shadow-sm hover:shadow-md transition group"
+         data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="400" data-aos-offset="0">
+        <img src="{% static 'images/logos/htmx.svg' %}" alt="HTMX" class="w-15 h-15 mb-3 transition-transform group-hover:scale-110">
+        <span class="font-medium text-lg text-light-primary dark:text-dark-primary">HTMX</span>
+      </a>
+
+    <!-- DOCKER -->
+      <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer"
+         class="flex flex-col items-center justify-between text-center p-4 bg-gradient-to-b from-white/50 to-light-backgroundOverlay dark:from-dark-background/40 dark:to-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl shadow-sm hover:shadow-md transition group"
+         data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="500" data-aos-offset="0">
+        <img src="{% static 'images/logos/docker.svg' %}" alt="HTMX" class="w-15 h-15 mb-3 transition-transform group-hover:scale-110">
+        <span class="font-medium text-lg text-light-primary dark:text-dark-primary">Docker</span>
+      </a>
+
+    <!-- GIT -->
+      <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer"
+         class="flex flex-col items-center justify-between text-center p-4 bg-gradient-to-b from-white/50 to-light-backgroundOverlay dark:from-dark-background/40 dark:to-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl shadow-sm hover:shadow-md transition group"
+         data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="600" data-aos-offset="0">
+        <img src="{% static 'images/logos/git.svg' %}" alt="HTMX" class="w-15 h-15 mb-3 transition-transform group-hover:scale-110">
+        <span class="font-medium text-lg text-light-primary dark:text-dark-primary">Git</span>
+      </a>
+
+    <!-- GITHUB -->
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer"
+         class="flex flex-col items-center justify-between text-center p-4 bg-gradient-to-b from-white/50 to-light-backgroundOverlay dark:from-dark-background/40 dark:to-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl shadow-sm hover:shadow-md transition group"
+         data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="600" data-aos-offset="0">
+        <img src="{% static 'images/logos/github_white_mode.svg' %}" alt="HTMX" class="w-15 h-15 mb-3 transition-transform group-hover:scale-110">
+        <span class="font-medium text-lg text-light-primary dark:text-dark-primary">Github</span>
+      </a>
+    </div>
+
+
+  <!-- Funciones principales -->
+    <div class="space-y-6" data-aos="fade-up">
+      <h2 class="text-xl font-semibold text-light-primary dark:text-dark-primary mb-2">
+        {% if language == "es" %} Funciones principales {% else %} Key Features {% endif %}
+      </h2>
+      <ul class="space-y-4 text-light-secondary dark:text-dark-secondary text-lg leading-relaxed">
+        <li data-aos="fade-up" data-aos-delay="100">
+          <strong class="text-light-primary dark:text-dark-primary">
+            {% if language == "es" %} Menú Digital Interactivo: {% else %} Interactive Digital Menu: {% endif %}
+          </strong>
+          {% if language == "es" %}
+            Interfaz web responsiva accesible mediante código QR, donde los clientes pueden explorar productos organizados por categorías, visualizar imágenes, descripciones y precios.
+          {% else %}
+            Responsive web interface accessible via QR code, where customers can explore products by category, view images, descriptions, and prices.
+          {% endif %}
+        </li>
+        <li data-aos="fade-up" data-aos-delay="200">
+          <strong class="text-light-primary dark:text-dark-primary">
+            {% if language == "es" %} Realización y Gestión de Pedidos: {% else %} Order Placement and Management: {% endif %}
+          </strong>
+          {% if language == "es" %}
+            Flujo completo para la selección de productos y generación de órdenes en tiempo real. Los pedidos son enviados automáticamente al panel de cocina para su validación y procesamiento.
+          {% else %}
+            Complete flow for product selection and real-time order generation. Orders are automatically sent to the kitchen panel for validation and processing.
+          {% endif %}
+        </li>
+        <li data-aos="fade-up" data-aos-delay="300">
+          <strong class="text-light-primary dark:text-dark-primary">
+            {% if language == "es" %} Panel de Cocina (Dashboard Operativo): {% else %} Kitchen Dashboard (Operational Panel): {% endif %}
+          </strong>
+          {% if language == "es" %}
+            Módulo diseñado para el personal de cocina, que permite visualizar pedidos entrantes, confirmar o rechazar órdenes y organizar la preparación en tiempo real. Ofrece una vista optimizada enfocada en agilidad operativa.
+          {% else %}
+            Module designed for kitchen staff to view incoming orders, confirm or reject them, and manage preparation in real time. Provides an optimized view focused on operational agility.
+          {% endif %}
+        </li>
+        <li data-aos="fade-up" data-aos-delay="400">
+          <strong class="text-light-primary dark:text-dark-primary">
+            {% if language == "es" %} Dashboard Administrativo: {% else %} Administrative Dashboard: {% endif %}
+          </strong>
+          {% if language == "es" %}
+            Vista destinada a los administradores del restaurante que muestra estadísticas clave como los productos más vendidos en distintos rangos de tiempo. Facilita la toma de decisiones basadas en datos.
+          {% else %}
+            View designed for restaurant administrators showing key stats like top-selling products over different time ranges. Helps with data-driven decision making.
+          {% endif %}
+        </li>
+        <li data-aos="fade-up" data-aos-delay="500">
+          <strong class="text-light-primary dark:text-dark-primary">
+            {% if language == "es" %} Gestión de Productos y Menú: {% else %} Product and Menu Management: {% endif %}
+          </strong>
+          {% if language == "es" %}
+            CRUD completo de productos con control de disponibilidad, categorías, imágenes, descripciones y precios. Incluye validaciones y formularios estilizados con Bootstrap.
+          {% else %}
+            Full product CRUD with availability control, categories, images, descriptions, and pricing. Includes validations and forms styled with Bootstrap.
+          {% endif %}
+        </li>
+      </ul>
+    </div>
+
+
+  <!-- Slideshow 2 -->
+    {% include "common/_slideshow.html" with images=slideshow_images_2 %}
+
+
+  <!-- Desafíos y soluciones -->
+    <div class="space-y-6">
+      <h2 class="text-xl font-semibold text-light-primary dark:text-dark-primary mb-2" data-aos="fade-right" data-aos-delay="100">
+        {% if language == "es" %} Desafíos y soluciones {% else %} Challenges and Solutions {% endif %}
+      </h2>
+      <div class="space-y-4 text-light-secondary dark:text-dark-secondary text-lg leading-relaxed">
+        <div>
+          <p><strong class="text-light-primary dark:text-dark-primary" data-aos="fade-right" data-aos-delay="200">{% if language == "es" %} Sincronización de Pedidos en Tiempo Real {% else %} Real-Time Order Sync {% endif %}</strong></p>
+          <p data-aos="fade-right" data-aos-delay="300">
+            {% if language == "es" %}
+              Desafío: Lograr una comunicación fluida entre el menú del cliente y el sistema de cocina sin retrasos.<br>
+              Solución: Se diseñó un flujo asincrónico de pedidos con lógica clara de estado y actualizaciones inmediatas, usando vistas bien optimizadas para garantizar una experiencia sin interrupciones.
+            {% else %}
+              Challenge: Achieve seamless communication between the customer menu and kitchen system without delays.<br>
+              Solution: An asynchronous order flow was designed with clear state logic and immediate updates, using well-optimized views to ensure a smooth experience.
+            {% endif %}
+          </p>
+        </div>
+
+        <div>
+          <p><strong class="text-light-primary dark:text-dark-primary" data-aos="fade-right" data-aos-delay="400">{% if language == "es" %} Presentación de Información Estratégica {% else %} Strategic Information Display {% endif %}</strong></p>
+          <p data-aos="fade-right" data-aos-delay="500">
+            {% if language == "es" %}
+              Desafío: Incorporar métricas útiles para la toma de decisiones en una interfaz amigable para usuarios no técnicos.<br>
+              Solución: Se desarrolló un dashboard administrativo que presenta productos más vendidos por períodos, utilizando agregaciones en consultas SQL y diseño visual claro con Bootstrap.
+            {% else %}
+              Challenge: Incorporate useful metrics for decision-making in a user-friendly interface for non-technical users.<br>
+              Solution: An admin dashboard was developed showing top-selling products per period, using SQL aggregations and a clean visual design with Bootstrap.
+            {% endif %}
+          </p>
+        </div>
+
+        <div>
+          <p><strong class="text-light-primary dark:text-dark-primary" data-aos="fade-right" data-aos-delay="600">{% if language == "es" %} Modularización del Proyecto {% else %} Project Modularization {% endif %}</strong></p>
+          <p data-aos="fade-right" data-aos-delay="700">
+            {% if language == "es" %}
+              Desafío: Mantener el código escalable y fácil de mantener ante futuras ampliaciones.<br>
+              Solución: Se estructuró el proyecto respetando la separación de responsabilidades: modelos, formularios, vistas, plantillas y lógica de negocio, siguiendo las mejores prácticas recomendadas por la documentación oficial de Django.
+            {% else %}
+              Challenge: Keep code scalable and easy to maintain for future expansions.<br>
+              Solution: The project was structured with clear separation of concerns (models, forms, views, templates, business logic) following Django’s official best practices.
+            {% endif %}
+          </p>
+        </div>
+
+        <div>
+          <p><strong class="text-light-primary dark:text-dark-primary" data-aos="fade-right" data-aos-delay="800">{% if language == "es" %} Capacitación y Usabilidad para el Personal del Restaurante {% else %} Training and Usability for Restaurant Staff {% endif %}</strong></p>
+          <p data-aos="fade-right" data-aos-delay="900">
+            {% if language == "es" %}
+              Desafío: Asegurar la adopción tecnológica por parte del personal sin conocimientos técnicos.<br>
+              Solución: Se implementó una interfaz simple, basada en Bootstrap, acompañada de un manual de usuario y una sesión de capacitación presencial para asegurar el correcto uso del sistema.
+            {% else %}
+              Challenge: Ensure technology adoption by staff with no technical background.<br>
+              Solution: A simple Bootstrap-based interface was implemented, supported by a user manual and a live training session to ensure proper usage.
+            {% endif %}
+          </p>
+        </div>
+
+        <div>
+          <p><strong class="text-light-primary dark:text-dark-primary" data-aos="fade-right" data-aos-delay="1000">{% if language == "es" %} Adaptabilidad y Rendimiento Móvil {% else %} Mobile Adaptability and Performance {% endif %}</strong></p>
+          <p data-aos="fade-right" data-aos-delay="1100">
+            {% if language == "es" %}
+              Desafío: Garantizar una experiencia rápida y funcional en dispositivos móviles con conexión limitada.<br>
+              Solución: Se priorizó la carga ligera del frontend, se aplicaron principios de diseño móvil-first, y se optimizó cada vista para minimizar consultas y carga innecesaria.
+            {% else %}
+              Challenge: Ensure a fast and functional experience on mobile devices with limited connectivity.<br>
+              Solution: Lightweight frontend loading was prioritized, mobile-first principles were applied, and each view was optimized to reduce queries and unnecessary load.
+            {% endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+
+  <!-- Enlace a GitHub -->
+    <div>
+      <a href="https://github.com/juan1144/fitomenu"
+         class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-light-accent hover:bg-opacity-90 dark:bg-dark-accent rounded-md shadow"
+         target="_blank" rel="noopener noreferrer">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0..."/></svg>
+        {% if language == "es" %} Ver código fuente {% else %} View Source Code {% endif %}
+      </a>
+    </div>
+
+  <!-- Navegación -->
+    <div class="flex justify-between pt-8">
+      <a href="{% url 'core:projects' %}" class="text-sm underline text-light-accent dark:text-dark-accent">
+        {% if language == "es" %} ← Volver a proyectos {% else %} ← Back to projects {% endif %}
+      </a>
+    </div>
+
   </section>
 {% endblock %}
 
