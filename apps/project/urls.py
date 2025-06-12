@@ -11,4 +11,14 @@ urlpatterns = [
         projects.fitomenu,
         name="project_detail_fitomenu",
     ),
+    path(
+        "portfolio/",
+        projects.portfolio,
+        name="project_detail_portfolio",
+    ),
+    path(
+        "datax/",
+        projects.datax,
+        name="project_detail_datax",
+    ),
 ]

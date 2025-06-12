@@ -121,7 +121,7 @@
         {% if language == "es" %} Funciones principales {% else %} Key Features {% endif %}
       </h2>
       <ul class="space-y-4 text-light-secondary dark:text-dark-secondary text-lg leading-relaxed">
-        <li data-aos="fade-up" data-aos-delay="100">
+        <li data-aos="fade-up" data-aos-delay="50">
           <strong class="text-light-primary dark:text-dark-primary">
             {% if language == "es" %} Menú Digital Interactivo: {% else %} Interactive Digital Menu: {% endif %}
           </strong>
@@ -131,7 +131,7 @@
             Responsive web interface accessible via QR code, where customers can explore products by category, view images, descriptions, and prices.
           {% endif %}
         </li>
-        <li data-aos="fade-up" data-aos-delay="200">
+        <li data-aos="fade-up" data-aos-delay="75">
           <strong class="text-light-primary dark:text-dark-primary">
             {% if language == "es" %} Realización y Gestión de Pedidos: {% else %} Order Placement and Management: {% endif %}
           </strong>
@@ -141,7 +141,7 @@
             Complete flow for product selection and real-time order generation. Orders are automatically sent to the kitchen panel for validation and processing.
           {% endif %}
         </li>
-        <li data-aos="fade-up" data-aos-delay="300">
+        <li data-aos="fade-up" data-aos-delay="100">
           <strong class="text-light-primary dark:text-dark-primary">
             {% if language == "es" %} Panel de Cocina (Dashboard Operativo): {% else %} Kitchen Dashboard (Operational Panel): {% endif %}
           </strong>
@@ -151,7 +151,7 @@
             Module designed for kitchen staff to view incoming orders, confirm or reject them, and manage preparation in real time. Provides an optimized view focused on operational agility.
           {% endif %}
         </li>
-        <li data-aos="fade-up" data-aos-delay="400">
+        <li data-aos="fade-up" data-aos-delay="125">
           <strong class="text-light-primary dark:text-dark-primary">
             {% if language == "es" %} Dashboard Administrativo: {% else %} Administrative Dashboard: {% endif %}
           </strong>
@@ -161,7 +161,7 @@
             View designed for restaurant administrators showing key stats like top-selling products over different time ranges. Helps with data-driven decision making.
           {% endif %}
         </li>
-        <li data-aos="fade-up" data-aos-delay="500">
+        <li data-aos="fade-up" data-aos-delay="150">
           <strong class="text-light-primary dark:text-dark-primary">
             {% if language == "es" %} Gestión de Productos y Menú: {% else %} Product and Menu Management: {% endif %}
           </strong>
@@ -180,14 +180,14 @@
 
 
   <!-- Desafíos y soluciones -->
-    <div class="space-y-6">
-      <h2 class="text-xl font-semibold text-light-primary dark:text-dark-primary mb-2" data-aos="fade-right" data-aos-delay="100">
+    <div class="space-y-6" data-aos="fade-up">
+      <h2 class="text-xl font-semibold text-light-primary dark:text-dark-primary mb-2">
         {% if language == "es" %} Desafíos y soluciones {% else %} Challenges and Solutions {% endif %}
       </h2>
       <div class="space-y-4 text-light-secondary dark:text-dark-secondary text-lg leading-relaxed">
         <div>
-          <p><strong class="text-light-primary dark:text-dark-primary" data-aos="fade-right" data-aos-delay="200">{% if language == "es" %} Sincronización de Pedidos en Tiempo Real {% else %} Real-Time Order Sync {% endif %}</strong></p>
-          <p data-aos="fade-right" data-aos-delay="300">
+          <p><strong class="text-light-primary dark:text-dark-primary" data-aos="fade-right" data-aos-delay="125">{% if language == "es" %} Sincronización de Pedidos en Tiempo Real {% else %} Real-Time Order Sync {% endif %}</strong></p>
+          <p data-aos="fade-right" data-aos-delay="150">
             {% if language == "es" %}
               Desafío: Lograr una comunicación fluida entre el menú del cliente y el sistema de cocina sin retrasos.<br>
               Solución: Se diseñó un flujo asincrónico de pedidos con lógica clara de estado y actualizaciones inmediatas, usando vistas bien optimizadas para garantizar una experiencia sin interrupciones.
@@ -199,8 +199,8 @@
         </div>
 
         <div>
-          <p><strong class="text-light-primary dark:text-dark-primary" data-aos="fade-right" data-aos-delay="400">{% if language == "es" %} Presentación de Información Estratégica {% else %} Strategic Information Display {% endif %}</strong></p>
-          <p data-aos="fade-right" data-aos-delay="500">
+          <p><strong class="text-light-primary dark:text-dark-primary" data-aos="fade-right" data-aos-delay="175">{% if language == "es" %} Presentación de Información Estratégica {% else %} Strategic Information Display {% endif %}</strong></p>
+          <p data-aos="fade-right" data-aos-delay="200">
             {% if language == "es" %}
               Desafío: Incorporar métricas útiles para la toma de decisiones en una interfaz amigable para usuarios no técnicos.<br>
               Solución: Se desarrolló un dashboard administrativo que presenta productos más vendidos por períodos, utilizando agregaciones en consultas SQL y diseño visual claro con Bootstrap.
@@ -212,8 +212,8 @@
         </div>
 
         <div>
-          <p><strong class="text-light-primary dark:text-dark-primary" data-aos="fade-right" data-aos-delay="600">{% if language == "es" %} Modularización del Proyecto {% else %} Project Modularization {% endif %}</strong></p>
-          <p data-aos="fade-right" data-aos-delay="700">
+          <p><strong class="text-light-primary dark:text-dark-primary" data-aos="fade-right" data-aos-delay="225">{% if language == "es" %} Modularización del Proyecto {% else %} Project Modularization {% endif %}</strong></p>
+          <p data-aos="fade-right" data-aos-delay="250">
             {% if language == "es" %}
               Desafío: Mantener el código escalable y fácil de mantener ante futuras ampliaciones.<br>
               Solución: Se estructuró el proyecto respetando la separación de responsabilidades: modelos, formularios, vistas, plantillas y lógica de negocio, siguiendo las mejores prácticas recomendadas por la documentación oficial de Django.
@@ -225,8 +225,8 @@
         </div>
 
         <div>
-          <p><strong class="text-light-primary dark:text-dark-primary" data-aos="fade-right" data-aos-delay="800">{% if language == "es" %} Capacitación y Usabilidad para el Personal del Restaurante {% else %} Training and Usability for Restaurant Staff {% endif %}</strong></p>
-          <p data-aos="fade-right" data-aos-delay="900">
+          <p><strong class="text-light-primary dark:text-dark-primary" data-aos="fade-right" data-aos-delay="275">{% if language == "es" %} Capacitación y Usabilidad para el Personal del Restaurante {% else %} Training and Usability for Restaurant Staff {% endif %}</strong></p>
+          <p data-aos="fade-right" data-aos-delay="300">
             {% if language == "es" %}
               Desafío: Asegurar la adopción tecnológica por parte del personal sin conocimientos técnicos.<br>
               Solución: Se implementó una interfaz simple, basada en Bootstrap, acompañada de un manual de usuario y una sesión de capacitación presencial para asegurar el correcto uso del sistema.
@@ -238,8 +238,8 @@
         </div>
 
         <div>
-          <p><strong class="text-light-primary dark:text-dark-primary" data-aos="fade-right" data-aos-delay="1000">{% if language == "es" %} Adaptabilidad y Rendimiento Móvil {% else %} Mobile Adaptability and Performance {% endif %}</strong></p>
-          <p data-aos="fade-right" data-aos-delay="1100">
+          <p><strong class="text-light-primary dark:text-dark-primary" data-aos="fade-right" data-aos-delay="325">{% if language == "es" %} Adaptabilidad y Rendimiento Móvil {% else %} Mobile Adaptability and Performance {% endif %}</strong></p>
+          <p data-aos="fade-right" data-aos-delay="350">
             {% if language == "es" %}
               Desafío: Garantizar una experiencia rápida y funcional en dispositivos móviles con conexión limitada.<br>
               Solución: Se priorizó la carga ligera del frontend, se aplicaron principios de diseño móvil-first, y se optimizó cada vista para minimizar consultas y carga innecesaria.
@@ -257,7 +257,7 @@
       <a href="https://github.com/juan1144/fitomenu"
          class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-light-accent hover:bg-opacity-90 dark:bg-dark-accent rounded-md shadow"
          target="_blank" rel="noopener noreferrer">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0..."/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-marked-icon lucide-book-marked"><path d="M10 2v8l3-3 3 3V2"/><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
         {% if language == "es" %} Ver código fuente {% else %} View Source Code {% endif %}
       </a>
     </div>

@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  Juan Peñate · Portafolio Web
+{% endblock %}
+
+{% block content %}
+  <section class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+
+  <!-- Title and Description -->
+    <div class="mb-1">
+      <h1 class="text-3xl md:text-5xl font-bold text-light-primary dark:text-dark-primary mb-2" data-aos="fade-right">Portafolio Web</h1>
+      <p class="text-lg text-light-secondary dark:text-dark-secondary" data-aos="fade-right">
+        {% if language == "es" %}
+          Sitio web personal desarrollado como portafolio digital para presentar proyectos, habilidades y artículos técnicos.
+        {% else %}
+          Personal website developed as a digital portfolio to showcase projects, skills, and technical writings.
+        {% endif %}
+      </p>
+    </div>
+
+  <!-- Introduction -->
+    <div class="space-y-4" data-aos="fade-up">
+      <h2 class="text-lg font-semibold text-light-primary dark:text-dark-primary flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-light-accent dark:text-dark-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" />
+        </svg>
+        {% if language == "es" %} Acerca del proyecto {% else %} About the Project {% endif %}
+      </h2>
+      <p class="text-light-secondary dark:text-dark-secondary text-lg leading-relaxed">
+        {% if language == "es" %}
+          Este proyecto tiene como propósito central mostrar mis habilidades técnicas a través de una interfaz limpia, minimalista y profesional. El portafolio incluye detalles de proyectos desarrollados, enlaces a código fuente y un blog técnico. Además, se adapta a distintos idiomas e incorpora diseño responsivo.
+        {% else %}
+          The main goal of this project is to highlight my technical skills through a clean, minimalist, and professional interface. The portfolio includes detailed project showcases, source code links, and a technical blog. It supports multilingual content and is fully responsive.
+        {% endif %}
+      </p>
+    </div>
+
+  <!-- Tech Stack -->
+    <div class="pt-8 space-y-4" data-aos="fade-right">
+      <h2 class="text-lg font-semibold text-light-primary dark:text-dark-primary flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-light-accent dark:text-dark-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M9 9h6v6H9z" /><path d="M3 9h2v6H3zM19 9h2v6h-2z" /><path d="M9 3v2M15 3v2M9 19v2M15 19v2" /><path d="M5 5h14v14H5z" />
+        </svg>
+        {% if language == "es" %} Tecnologías utilizadas {% else %} Technologies used {% endif %}
+      </h2>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+    <!-- Django -->
+      <a href="https://www.djangoproject.com/" target="_blank" rel="noopener noreferrer"
+         class="flex flex-col items-center justify-between text-center p-4 bg-gradient-to-b from-white/50 to-light-backgroundOverlay dark:from-dark-background/40 dark:to-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl shadow-sm hover:shadow-md transition group"
+         data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-offset="0">
+        <img src="{% static 'images/logos/django.svg' %}" alt="Django" class="w-15 h-15 mb-3 transition-transform group-hover:scale-110">
+        <span class="font-medium text-lg text-light-primary dark:text-dark-primary">Django</span>
+      </a>
+
+    <!-- Tailwind -->
+      <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer"
+         class="flex flex-col items-center justify-between text-center p-4 bg-gradient-to-b from-white/50 to-light-backgroundOverlay dark:from-dark-background/40 dark:to-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl shadow-sm hover:shadow-md transition group"
+         data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-offset="0">
+        <img src="{% static 'images/logos/tailwind.svg' %}" alt="Bootstrap" class="w-15 h-15 mb-3 transition-transform group-hover:scale-110">
+        <span class="font-medium text-lg text-light-primary dark:text-dark-primary">Bootstrap</span>
+      </a>
+
+    <!-- PostgreSQL -->
+      <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer"
+         class="flex flex-col items-center justify-between text-center p-4 bg-gradient-to-b from-white/50 to-light-backgroundOverlay dark:from-dark-background/40 dark:to-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl shadow-sm hover:shadow-md transition group"
+         data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0">
+        <img src="{% static 'images/logos/postgres.svg' %}" alt="PostgreSQL" class="w-12 h-12 mb-3 transition-transform group-hover:scale-110">
+        <span class="font-medium text-lg text-light-primary dark:text-dark-primary">PostgreSQL</span>
+      </a>
+
+    <!-- HTMX -->
+      <a href="https://htmx.org/" target="_blank" rel="noopener noreferrer"
+         class="flex flex-col items-center justify-between text-center p-4 bg-gradient-to-b from-white/50 to-light-backgroundOverlay dark:from-dark-background/40 dark:to-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl shadow-sm hover:shadow-md transition group"
+         data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="400" data-aos-offset="0">
+        <img src="{% static 'images/logos/htmx.svg' %}" alt="HTMX" class="w-15 h-15 mb-3 transition-transform group-hover:scale-110">
+        <span class="font-medium text-lg text-light-primary dark:text-dark-primary">HTMX</span>
+      </a>
+
+    <!-- DOCKER -->
+      <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer"
+         class="flex flex-col items-center justify-between text-center p-4 bg-gradient-to-b from-white/50 to-light-backgroundOverlay dark:from-dark-background/40 dark:to-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl shadow-sm hover:shadow-md transition group"
+         data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="500" data-aos-offset="0">
+        <img src="{% static 'images/logos/docker.svg' %}" alt="HTMX" class="w-15 h-15 mb-3 transition-transform group-hover:scale-110">
+        <span class="font-medium text-lg text-light-primary dark:text-dark-primary">Docker</span>
+      </a>
+
+    <!-- GIT -->
+      <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer"
+         class="flex flex-col items-center justify-between text-center p-4 bg-gradient-to-b from-white/50 to-light-backgroundOverlay dark:from-dark-background/40 dark:to-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl shadow-sm hover:shadow-md transition group"
+         data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="600" data-aos-offset="0">
+        <img src="{% static 'images/logos/git.svg' %}" alt="HTMX" class="w-15 h-15 mb-3 transition-transform group-hover:scale-110">
+        <span class="font-medium text-lg text-light-primary dark:text-dark-primary">Git</span>
+      </a>
+
+    <!-- GITHUB -->
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer"
+         class="flex flex-col items-center justify-between text-center p-4 bg-gradient-to-b from-white/50 to-light-backgroundOverlay dark:from-dark-background/40 dark:to-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl shadow-sm hover:shadow-md transition group"
+         data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="600" data-aos-offset="0">
+        <img src="{% static 'images/logos/github_white_mode.svg' %}" alt="HTMX" class="w-15 h-15 mb-3 transition-transform group-hover:scale-110">
+        <span class="font-medium text-lg text-light-primary dark:text-dark-primary">Github</span>
+      </a>
+    </div>
+
+  <!-- Key features -->
+    <div class="space-y-6" data-aos="fade-up">
+      <h2 class="text-xl font-semibold text-light-primary dark:text-dark-primary mb-2">
+        {% if language == "es" %} Funciones principales {% else %} Key Features {% endif %}
+      </h2>
+      <ul class="space-y-4 text-light-secondary dark:text-dark-secondary text-lg leading-relaxed">
+        <li data-aos="fade-up" data-aos-delay="100"><strong>{% if language == "es" %} Portafolio de proyectos:{% else %} Project Portfolio:{% endif %}</strong>
+          {% if language == "es" %}
+            Página de detalle para cada proyecto con imágenes, descripciones, tecnologías utilizadas, código fuente y desafíos técnicos.
+          {% else %}
+            Detail page for each project with images, descriptions, technologies used, source code, and technical challenges.
+          {% endif %}
+        </li>
+        <li data-aos="fade-up" data-aos-delay="150"><strong>{% if language == "es" %} Blog técnico:{% else %} Technical Blog:{% endif %}</strong>
+          {% if language == "es" %}
+            Sección de artículos sobre programación, desarrollo web, automatización, entre otros temas.
+          {% else %}
+            Blog section covering topics like programming, web development, automation, and more.
+          {% endif %}
+        </li>
+        <li data-aos="fade-up" data-aos-delay="200"><strong>{% if language == "es" %} Cambios de idioma:{% else %} Language switching:{% endif %}</strong>
+          {% if language == "es" %}
+            Sistema multilenguaje con URLs diferenciadas por idioma (`/es/`, `/en/`).
+          {% else %}
+            Multilingual system with language-specific URLs (`/es/`, `/en/`).
+          {% endif %}
+        </li>
+        <li data-aos="fade-up" data-aos-delay="250"><strong>{% if language == "es" %} Diseño personalizado:{% else %} Custom design:{% endif %}</strong>
+          {% if language == "es" %}
+            Estética moderna y oscura inspirada en estilo minimalista con soporte para modo claro y oscuro.
+          {% else %}
+            Modern, dark-themed aesthetic inspired by minimalist style with light/dark mode support.
+          {% endif %}
+        </li>
+      </ul>
+    </div>
+
+  <!-- Challenges and solutions -->
+    <div class="space-y-6" data-aos="fade-up">
+      <h2 class="text-xl font-semibold text-light-primary dark:text-dark-primary mb-2">
+        {% if language == "es" %} Desafíos y soluciones {% else %} Challenges and Solutions {% endif %}
+      </h2>
+      <ul class="space-y-4 text-light-secondary dark:text-dark-secondary text-lg leading-relaxed">
+        <li data-aos="fade-up" data-aos-delay="100">
+          <strong>{% if language == "es" %} Traducción completa y navegación contextual:{% else %} Full translation and contextual navigation:{% endif %}</strong>
+          {% if language == "es" %}
+            Se implementó `LocaleMiddleware`, `set_language` y estructuras dinámicas para traducir contenido, rutas y enlaces sin duplicar lógica.
+          {% else %}
+            Implemented `LocaleMiddleware`, `set_language`, and dynamic structures to translate content, routes, and links without duplicating logic.
+          {% endif %}
+        </li>
+        <li data-aos="fade-up" data-aos-delay="150">
+          <strong>{% if language == "es" %} Código destacable y modularizado:{% else %} Highlighted and modular code:{% endif %}</strong>
+          {% if language == "es" %}
+            Se organizaron los módulos por app, siguiendo buenas prácticas en vistas, templates y estructura SCSS.
+          {% else %}
+            Apps and modules were structured cleanly following best practices for views, templates, and SCSS modularization.
+          {% endif %}
+        </li>
+      </ul>
+    </div>
+
+  <!-- GitHub Link -->
+    <div>
+      <a href="https://github.com/juan1144/portfolio"
+         class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-light-accent hover:bg-opacity-90 dark:bg-dark-accent rounded-md shadow"
+         target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-marked-icon lucide-book-marked"><path d="M10 2v8l3-3 3 3V2"/><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
+        {% if language == "es" %} Ver código fuente {% else %} View Source Code {% endif %}
+      </a>
+    </div>
+
+  <!-- Nav -->
+    <div class="flex justify-between pt-8">
+      <a href="{% url 'project:project' %}" class="text-sm underline text-light-accent dark:text-dark-accent">
+        {% if language == "es" %} ← Volver a proyectos {% else %} ← Back to projects {% endif %}
+      </a>
+    </div>
+
+  </section>
+{% endblock %}
+
+{% block js %}
+  <script src="{% static 'js/customs/_slideshow.js' %}?v=1749746754"></script>
+{% endblock %}

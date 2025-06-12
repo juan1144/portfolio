@@ -25,9 +25,25 @@ def fitomenu(request):
 
     return render(
         request,
-        "projects/proyect_detail.html",
+        "projects/fitomenu.html",
         {
             "slideshow_images_1": slideshow_images_1,
             "slideshow_images_2": slideshow_images_2,
         },
+    )
+
+
+def portfolio(request):
+    """Render the detail page for the 'Portfolio' project."""
+    return render(
+        request,
+        "projects/portfolio.html",
+    )
+
+
+def datax(request):
+    """Render the detail page for the 'Portfolio' project."""
+    return render(
+        request,
+        "projects/datax.html",
     )

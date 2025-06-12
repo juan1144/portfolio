@@ -46,7 +46,12 @@
           {% endif %}
         </p>
         <div class="flex items-center justify-between mt-4">
-          <a href="{% url 'project:project_detail_fitomenu' %}" class="text-sm font-medium text-light-accent dark:text-dark-accent hover:underline">
+          <a href="{% url 'project:project_detail_fitomenu' %}"
+             class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-light-accent hover:bg-opacity-90 dark:bg-dark-accent rounded-md shadow"
+             rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M10 2v8l3-3 3 3V2"/><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/>
+            </svg>
             {% if language == "es" %} Ver proyecto {% else %} View Project {% endif %}
           </a>
 
@@ -70,7 +75,12 @@
           {% endif %}
         </p>
         <div class="flex items-center justify-between mt-4">
-          <a href="#" class="text-sm font-medium text-light-accent dark:text-dark-accent hover:underline">
+          <a href="{% url "project:project_detail_datax" %}"
+             class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-light-accent hover:bg-opacity-90 dark:bg-dark-accent rounded-md shadow"
+             rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M10 2v8l3-3 3 3V2"/><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/>
+            </svg>
             {% if language == "es" %} Ver proyecto {% else %} View Project {% endif %}
           </a>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -95,7 +105,12 @@
           {% endif %}
         </p>
         <div class="flex items-center justify-between mt-4">
-          <a href="#" class="text-sm font-medium text-light-accent dark:text-dark-accent hover:underline">
+          <a href="{% url 'project:project_detail_portfolio' %}"
+             class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-light-accent hover:bg-opacity-90 dark:bg-dark-accent rounded-md shadow"
+             rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M10 2v8l3-3 3 3V2"/><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/>
+            </svg>
             {% if language == "es" %} Ver proyecto {% else %} View Project {% endif %}
           </a>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
