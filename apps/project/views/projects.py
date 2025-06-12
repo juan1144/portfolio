@@ -42,7 +42,7 @@ def portfolio(request):
 
 
 def datax(request):
-    """Render the detail page for the 'Portfolio' project."""
+    """Render the detail page for the 'datax' project."""
     return render(
         request,
         "projects/datax.html",

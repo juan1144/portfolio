@@ -8,7 +8,7 @@
 {% block content %}
   <section class="max-w-4xl mx-auto px-6 py-12 space-y-12">
 
-  <!-- Título y descripción breve -->
+  <!-- Title and description -->
     <div class="mb-1">
       <h1 class="text-3xl md:text-5xl font-bold text-light-primary dark:text-dark-primary mb-2" data-aos="fade-right">FitoMenu</h1>
       <p class="text-lg text-light-secondary dark:text-dark-secondary" data-aos="fade-right">
@@ -23,7 +23,7 @@
   <!-- Slideshow 1 -->
     {% include "common/_slideshow.html" with images=slideshow_images_1 %}
 
-  <!-- Introducción del proyecto -->
+  <!-- Introduction -->
     <div class="space-y-4" data-aos="fade-up">
       <h2 class="text-lg font-semibold text-light-primary dark:text-dark-primary flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-light-accent dark:text-dark-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -47,7 +47,7 @@
       </p>
     </div>
 
-  <!-- Stack tecnológico -->
+  <!-- Tech stack -->
     <div class="pt-8 space-y-4" data-aos="fade-right">
       <h2 class="text-lg font-semibold text-light-primary dark:text-dark-primary flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-light-accent dark:text-dark-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -115,7 +115,7 @@
     </div>
 
 
-  <!-- Funciones principales -->
+  <!-- Key features -->
     <div class="space-y-6" data-aos="fade-up">
       <h2 class="text-xl font-semibold text-light-primary dark:text-dark-primary mb-2">
         {% if language == "es" %} Funciones principales {% else %} Key Features {% endif %}
@@ -179,7 +179,7 @@
     {% include "common/_slideshow.html" with images=slideshow_images_2 %}
 
 
-  <!-- Desafíos y soluciones -->
+  <!-- Challenges and solutions -->
     <div class="space-y-6" data-aos="fade-up">
       <h2 class="text-xl font-semibold text-light-primary dark:text-dark-primary mb-2">
         {% if language == "es" %} Desafíos y soluciones {% else %} Challenges and Solutions {% endif %}
@@ -252,7 +252,7 @@
       </div>
     </div>
 
-  <!-- Enlace a GitHub -->
+  <!-- GitHub link -->
     <div>
       <a href="https://github.com/juan1144/fitomenu"
          class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-light-accent hover:bg-opacity-90 dark:bg-dark-accent rounded-md shadow"
@@ -262,7 +262,7 @@
       </a>
     </div>
 
-  <!-- Navegación -->
+  <!-- Nav -->
     <div class="flex justify-between pt-8">
       <a href="{% url 'project:project' %}" class="text-sm underline text-light-accent dark:text-dark-accent">
         {% if language == "es" %} ← Volver a proyectos {% else %} ← Back to projects {% endif %}
