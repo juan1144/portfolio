@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  {% if language == "es" %}
+    Juan Peñate · Entrada 1
+  {% else %}
+    Juan Peñate · Post 1
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <h1 class="text-2xl font-medium title-font">
+    {% if language == "es" %}
+      Entrada 1
+    {% else %}
+      Post 1
+    {% endif %}
+  </h1>
+{% endblock %}
