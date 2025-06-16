@@ -8,10 +8,9 @@ def post_detail(request, slug):
     """Render the blog post based on slug and language."""
     language = get_language()
 
-    # Obtiene el post según el idioma y slug
     post = get_object_or_404(BlogsPost, slug=slug, language=language, is_published=True)
 
-    # Usamos el mismo template para todas las traducciones del mismo post
+    # Render the template dynamic with the slug name
     template_name = f"blogs/posts/{slug}.html"
 
     context = {
