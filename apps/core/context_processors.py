@@ -3,12 +3,21 @@ from django.utils.translation import get_language
 from apps.core.models.home import Social
 
 
-def current_view_name(request):
+def active_section(request):
     """Add the current view's name to the template context."""
-    try:
-        return {"view_name": request.resolver_match.view_name}
-    except AttributeError:
-        return {"view_name": None}
+    path = request.path.lower()
+
+    if path.startswith("/en/") or path.startswith("/es/"):
+        path = "/" + "/".join(path.split("/")[2:])
+
+    if path == "/":
+        return {"active_section": "home"}
+    elif path.startswith("/project/"):
+        return {"active_section": "projects"}
+    elif path.startswith("/blog/"):
+        return {"active_section": "blog"}
+    else:
+        return {"active_section": None}
 
 
 def social_links(request):

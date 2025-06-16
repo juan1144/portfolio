@@ -30,7 +30,7 @@
                backdrop-blur-md rounded-full transition-colors duration-300">
       <li>
         <a href="{% url 'core:home' %}"
-           class="{% if view_name == 'core:home' %} text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
+           class="{% if active_section == 'home' %} text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
           {% if language|default:"en" == "en" %}
             Home
           {% else %}
@@ -40,7 +40,7 @@
       </li>
       <li>
         <a href="{% url 'project:project' %}"
-           class="{% if view_name == 'project:project' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
+           class="{% if active_section == 'projects' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
           {% if language|default:"en" == "en" %}
             Projects
           {% else %}
@@ -50,7 +50,7 @@
       </li>
       <li>
         <a href="{% url 'blog:blog' %}"
-           class="{% if view_name == 'blog:blog' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
+           class="{% if active_section == 'blog' %}text-light-accent dark:text-dark-accent font-semibold{% else %}hover:text-light-accent dark:hover:text-dark-accent{% endif %} transition">
           {% if language|default:"en" == "en" %}
             Blog
           {% else %}
@@ -83,7 +83,7 @@
           <ul class="py-2 space-y-1">
             <li>
               <a href="{% url 'core:home' %}"
-                 class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'core:home' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
+                 class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if active_section == 'home' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
                 {% if language|default:"en" == "en" %}
                   Home
                 {% else %}
@@ -93,7 +93,7 @@
             </li>
             <li>
               <a href="{% url 'project:project' %}"
-                 class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'project:project' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
+                 class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if active_section == 'projects' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
                 {% if language|default:"en" == "en" %}
                   Projects
                 {% else %}
@@ -103,7 +103,7 @@
             </li>
             <li>
               <a href="{% url 'blog:blog' %}"
-                 class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if view_name == 'blog:blog' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
+                 class="block px-4 py-2 hover:text-light-accent dark:hover:text-dark-accent transition {% if active_section == 'blog' %}text-light-accent dark:text-dark-accent font-semibold{% endif %}">
                 {% if language|default:"en" == "en" %}
                   Blog
                 {% else %}

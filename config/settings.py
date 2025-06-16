@@ -67,7 +67,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "apps.core.context_processors.current_view_name",
+                "apps.core.context_processors.active_section",
                 "apps.core.context_processors.social_links",
                 "apps.core.context_processors.current_language",
             ],
