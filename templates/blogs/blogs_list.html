@@ -40,7 +40,7 @@
 
   <!-- Main Title -->
     <div class="text-center" data-aos="fade-down">
-      <h1 class="text-3xl md:text-5xl font-bold text-light-primary dark:text-dark-primary mb-2">
+      <h1 class="text-3xl md:text-5xl font-bold text-light-primary dark:text-dark-primary">
         The Code Chronicle
       </h1>
       <p class="text-light-secondary dark:text-dark-secondary max-w-2xl mx-auto">
@@ -54,8 +54,25 @@
 
   <!-- Search input -->
     <div class="max-w-lg mx-auto" data-aos="fade-down">
-      <input type="text" name="search" placeholder="{% if language == 'es' %}Buscar entradas...{% else %}Search posts...{% endif %}"
-             class="w-full px-4 py-3 rounded-lg border border-light-border dark:border-dark-border bg-light-background dark:bg-dark-background text-light-primary dark:text-dark-primary shadow-sm focus:ring-2 focus:ring-light-accent dark:focus:ring-dark-accent focus:outline-none transition">
+      <form method="get" action="" class="max-w-lg mx-auto flex flex-col sm:flex-row gap-2 sm:items-center" data-aos="fade-down">
+        <input type="text" name="q" value="{{ request.GET.q }}"
+               placeholder="{% if language == 'es' %}Buscar entradas...{% else %}Search posts...{% endif %}"
+               class="w-full px-4 py-3 rounded-lg border border-light-border dark:border-dark-border bg-light-background dark:bg-dark-background text-light-primary dark:text-dark-primary shadow-sm focus:ring-2 focus:ring-light-accent dark:focus:ring-dark-accent focus:outline-none transition">
+
+        <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+          <button type="submit"
+                  class="px-4 py-3 rounded-lg bg-light-accent dark:bg-dark-accent text-white font-semibold hover:opacity-90 transition w-full sm:w-auto">
+            {% if language == 'es' %}Buscar{% else %}Search{% endif %}
+          </button>
+
+          {% if has_filters %}
+            <a href="{% url 'blog:blog' %}"
+               class="px-4 py-3 rounded-lg border border-light-border dark:border-dark-border bg-transparent text-light-primary dark:text-dark-primary hover:bg-light-border dark:hover:bg-dark-border transition text-center w-full sm:w-auto">
+              {% if language == 'es' %}Limpiar{% else %}Clear{% endif %}
+            </a>
+          {% endif %}
+        </div>
+      </form>
     </div>
 
   <!-- Posts -->
