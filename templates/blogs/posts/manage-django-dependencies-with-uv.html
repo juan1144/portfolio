@@ -47,36 +47,36 @@
     <article class="prose dark:prose-invert max-w-none text-light-primary dark:text-dark-primary space-y-6" data-aos="fade-up">
 
       {% if language == "es" %}
-        <p>Uno de los primeros pasos al comenzar un nuevo proyecto Django moderno es establecer una buena gestión de entornos y dependencias. En esta entrada te mostraré cómo usar <strong>uv</strong>, una herramienta ultrarrápida escrita en Rust, para manejar tanto el entorno virtual como las dependencias de tu proyecto de forma eficiente, reproducible y sin complicaciones.</p>
+        <p class="text-lg">Uno de los primeros pasos al comenzar un nuevo proyecto Django moderno es establecer una buena gestión de entornos y dependencias. En esta entrada te mostraré cómo usar <strong>uv</strong>, una herramienta ultrarrápida escrita en Rust, para manejar tanto el entorno virtual como las dependencias de tu proyecto de forma eficiente, reproducible y sin complicaciones.</p>
 
-        <h2>¿Por qué usar uv?</h2>
-        <p>A diferencia de <code>pip</code>, uv combina la velocidad del lenguaje Rust con un enfoque unificado para gestionar entornos virtuales, instalar paquetes y mantener un archivo de bloqueo (<code>uv.lock</code>) que asegura que todos los entornos sean idénticos en todas las máquinas. Ideal para proyectos Django en equipos o producción.</p>
+        <h2 class="text-lg font-bold">¿Por qué usar uv?</h2>
+        <p class="text-lg">A diferencia de <code>pip</code>, uv combina la velocidad del lenguaje Rust con un enfoque unificado para gestionar entornos virtuales, instalar paquetes y mantener un archivo de bloqueo (<code>uv.lock</code>) que asegura que todos los entornos sean idénticos en todas las máquinas. Ideal para proyectos Django en equipos o producción.</p>
 
-        <h2>1. Inicializa tu proyecto con uv</h2>
-        <p>Comenzamos creando la base del proyecto con:</p>
+        <h2 class="text-lg font-bold">Inicializa tu proyecto con uv</h2>
+        <p class="text-lg">Comenzamos creando la base del proyecto con:</p>
         {% include "common/_codeblock.html" with code="uv init atlas --app" %}
 
-        <p>Esto generará los siguientes archivos:</p>
+        <p class="text-lg">Esto generará los siguientes archivos:</p>
         <ul>
           <li><code>hello.py</code></li>
           <li><code>pyproject.toml</code></li>
           <li><code>README.md</code></li>
           <li><code>.gitignore</code></li>
         </ul>
-        <p>Te recomiendo hacer un primer commit para tener un punto limpio de partida:</p>
+        <p class="text-lg">Te recomiendo hacer un primer commit para tener un punto limpio de partida:</p>
         {% include "common/_codeblock.html" with code="git add ." %}
         {% include "common/_codeblock.html" with code="git commit -m 'Initial commit\'" %}
 
-        <h2>2. Crear entorno virtual</h2>
-        <p>Luego, creamos el entorno virtual para trabajar de forma aislada:</p>
+        <h2 class="text-lg font-bold">Crear entorno virtual</h2>
+        <p class="text-lg">Luego, creamos el entorno virtual para trabajar de forma aislada:</p>
         {% include "common/_codeblock.html" with code="uv venv .venv" %}
 
-        <h2>3. Bloquea tus dependencias</h2>
-        <p>Para asegurar que las versiones de los paquetes se mantengan sincronizadas entre todos los desarrolladores (o servidores), generamos el archivo de bloqueo con:</p>
+        <h2 class="text-lg font-bold">Bloquea tus dependencias</h2>
+        <p class="text-lg">Para asegurar que las versiones de los paquetes se mantengan sincronizadas entre todos los desarrolladores (o servidores), generamos el archivo de bloqueo con:</p>
         {% include "common/_codeblock.html" with code="uv lock" %}
 
-        <h2>Estructura final esperada</h2>
-        <p>Al final de estos pasos deberías tener una estructura así:</p>
+        <h2 class="text-lg font-bold">Estructura final esperada</h2>
+        <p class="text-lg">Al final de estos pasos deberías tener una estructura así:</p>
         <ul>
           <li><code>.venv/</code></li>
           <li><code>hello.py</code></li>
@@ -86,42 +86,43 @@
           <li><code>.gitignore</code></li>
         </ul>
 
-        <h2>4. Instala Django</h2>
-        <p>Una vez tienes tu entorno listo y bloqueado, puedes instalar Django con:</p>
+        <h2 class="text-lg font-bold">Instala Django</h2>
+        <p class="text-lg">Una vez tienes tu entorno listo y bloqueado, puedes instalar Django con:</p>
         {% include "common/_codeblock.html" with code="uv add django" %}
 
-        <p>Gracias a uv, puedes dejar de preocuparte por diferencias de entornos y versiones. Tu proyecto Django será más predecible, rápido de instalar, y más sencillo de mantener.</p>
+        <p class="text-lg">Gracias a uv, puedes dejar de preocuparte por diferencias de entornos y versiones. Tu proyecto Django será más predecible, rápido de instalar, y más sencillo de mantener.</p>
 
       {% else %}
-        <p>One of the first steps when starting a modern Django project is to establish a solid environment and dependency management setup. In this post, I’ll show you how to use <strong>uv</strong>, a lightning-fast tool written in Rust, to manage your virtual environment and dependencies efficiently and reproducibly.</p>
-        <h2>Why use uv?</h2>
-        <p>Unlike <code>pip</code>, uv combines the speed of the Rust language with a unified approach to managing virtual environments, installing packages, and maintaining a lock file (<code>uv.lock</code>) that ensures all environments are identical across all machines. It’s ideal for Django projects in teams or production.</p>
-        <h2>1. Initialize your project with uv</h2>
-        <p>We start by creating the project base with:</p>
+        <p class="text-lg">One of the first steps when starting a modern Django project is to establish a solid environment and dependency management setup. In this post, I’ll show you how to use <strong>uv</strong>, a lightning-fast tool written in Rust, to manage your virtual environment and dependencies efficiently and reproducibly.</p>
+        <h2 class="text-lg font-bold">Why use uv?</h2>
+        <p class="text-lg">Unlike <code>pip</code>, uv combines the speed of the Rust language with a unified approach to managing virtual environments, installing packages, and maintaining a lock file (<code>uv.lock</code>) that ensures all environments are identical across all machines. It’s ideal for Django projects in teams or production.</p>
+        <h2 class="text-lg font-bold">Initialize your project with uv</h2>
+        <p class="text-lg">We start by creating the project base with:</p>
         {% include "common/_codeblock.html" with code="uv init atlas --app" %}
 
-        <p>This will generate the following files:</p>
-        <ul>
+        <p class="text-lg">This will generate the following files:</p>
+        <ul class="bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
           <li><code>hello.py</code></li>
           <li><code>pyproject.toml</code></li>
           <li><code>README.md</code></li>
           <li><code>.gitignore</code></li>
         </ul>
-        <p>I recommend making an initial commit to start with a clean baseline:</p>
+        <p class="text-lg">I recommend making an initial commit to start with a clean baseline:</p>
+        {% include "common/_codeblock.html" with code="git add ." %}
         {% include "common/_codeblock.html" with code="git add ." %}
         {% include "common/_codeblock.html" with code="git commit -m 'Initial commit\'" %}
 
-        <h2>2. Create virtual environment</h2>
-        <p>Next, create the virtual environment to work in isolation:</p>
+        <h2 class="text-lg font-bold">Create virtual environment</h2>
+        <p class="text-lg">Next, create the virtual environment to work in isolation:</p>
         {% include "common/_codeblock.html" with code="uv venv .venv" %}
 
-        <h2>3. Lock your dependencies</h2>
-        <p>To ensure that package versions remain synchronized across all developers (or servers), we generate the lock file with:</p>
+        <h2 class="text-lg font-bold">Lock your dependencies</h2>
+        <p class="text-lg">To ensure that package versions remain synchronized across all developers (or servers), we generate the lock file with:</p>
         {% include "common/_codeblock.html" with code="uv lock" %}
 
-        <h2>Expected final structure</h2>
-        <p>At the end of these steps, you should have a structure like this:</p>
-        <ul>
+        <h2 class="text-lg font-bold">Expected final structure</h2>
+        <p class="text-lg">At the end of these steps, you should have a structure like this:</p>
+        <ul class="bg-light-backgroundOverlay dark:bg-dark-backgroundOverlay border border-light-border dark:border-dark-border rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
           <li><code>.venv/</code></li>
           <li><code>hello.py</code></li>
           <li><code>pyproject.toml</code></li>
@@ -130,11 +131,11 @@
           <li><code>.gitignore</code></li>
         </ul>
 
-        <h2>4. Install Django</h2>
-        <p>Once your environment is ready and locked, you can install Django with:</p>
+        <h2 class="text-lg font-bold">Install Django</h2>
+        <p class="text-lg">Once your environment is ready and locked, you can install Django with:</p>
         {% include "common/_codeblock.html" with code="uv add django" %}
 
-        <p>Thanks to uv, you can stop worrying about environment and version inconsistencies. Your Django project will be more predictable, faster to set up, and easier to maintain.</p>
+        <p class="text-lg">Thanks to uv, you can stop worrying about environment and version inconsistencies. Your Django project will be more predictable, faster to set up, and easier to maintain.</p>
       {% endif %}
       <p>- Juan Felipe Peñate Hernández</p>
     </article>
